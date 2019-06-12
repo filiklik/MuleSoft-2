@@ -1,0 +1,35 @@
+{
+  "configs": [
+    "implementation.xml",
+    "interface.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:muledemo:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.2.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [
+        "org.apache.derby.jdbc"
+      ],
+      "exportedResources": [
+        "api/american-flight-api.raml",
+        "api/Examples/AmericanFlightExample.raml",
+        "api/Examples/AmericanFlightNoIDExample.raml",
+        "api/exchange_modules/68ef9520-24e9-4cf2-b2f5-620025690913/training-american-flight-data-type/1.0.1/AmericanFlightDataType.raml",
+        "api/exchange_modules/68ef9520-24e9-4cf2-b2f5-620025690913/training-american-flights-example/1.0.1/AmericanFlightsExample.raml",
+        "application-types.xml",
+        "examples/american-flights-example.json",
+        "implementation.xml",
+        "interface.xml",
+        "log4j2.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

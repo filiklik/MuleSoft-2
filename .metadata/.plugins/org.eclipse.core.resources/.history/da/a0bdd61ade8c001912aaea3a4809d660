@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
+	<flow name="diy4Flow" doc:id="2edd2025-a0bb-4919-a018-e58e51696f64" >
+		<http:listener doc:name="Listener" doc:id="115002e2-a076-4e05-9715-c571cd3ca32c" config-ref="HTTP_Listener_config" path="/api/*"/>
+		<db:select doc:name="Select" doc:id="f203b683-37d7-4da5-b896-11142741935d" config-ref="Database_Config">
+			<db:sql >select * from accounts</db:sql>
+		</db:select>
+	</flow>
+</mule>

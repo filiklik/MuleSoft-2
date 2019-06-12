@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="payload" format="json">
+      <types:shape format="weave" example="examples/american-flights-example-1.json"><![CDATA[%dw 2.0
+
+type payload = Array<{|  ID: Number {"typeId": "int"},   code: String,   price: Number {"typeId": "double"},   departureDate: String,   origin: String,   destination: String,   emptySeats: Number {"typeId": "int"},   plane: {|    "type": String,     totalSeats: Number {"typeId": "int"}  |}|}> {"example": "[{\"ID\":1,\"code\":\"ER38sd\",\"price\":400.00,\"departureDate\":\"2016\/03\/20\",\"origin\":\"MUA\",\"destination\":\"SFO\",\"emptySeats\":0,\"plane\":{\"type\":\"Boeing 737\",\"totalSeats\":150}},{\"ID\":2,\"code\":\"ER45if\",\"price\":345.99,\"departureDate\":\"2016\/02\/11\",\"origin\":\"MUA\",\"destination\":\"LAX\",\"emptySeats\":52,\"plane\":{\"type\":\"Boeing 777\",\"totalSeats\":300}}]"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#a4f0b7c4-3910-4bd9-9039-605ebd8a1065">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="payload"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#a482e1e8-356f-4dfd-9af0-4668e106aece">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="payload"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#a8d88672-4ba0-4552-8117-6182f458626d">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="payload"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#85848475-4645-4a74-a3fe-496432a978d9">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="payload"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#cfbd2095-7cb7-46d0-a4b4-dd1dcd59ce5a">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="payload"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#dea7a83a-6d4c-4e06-9d35-c293659473f9">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="payload"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#20005745-850f-4f83-b458-cd358ebd0082">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="payload"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

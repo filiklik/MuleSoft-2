@@ -1,0 +1,401 @@
+!SESSION 2019-06-12 14:13:05.201 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+This is a continuation of log file D:\Mulesoft\.metadata\.bak_0.log
+Created Time: 2019-06-12 14:13:33.429
+
+!ENTRY org.mule.tooling.ui.contribution.munit 1 1 2019-06-12 14:13:33.429
+!MESSAGE Creating MUnit temporary folder in C:\Users\Training\AppData\Local\Temp\munit-temp-dir
+
+!ENTRY org.mule.tooling.analytics 1 0 2019-06-12 14:13:46.569
+!MESSAGE Analytics starts successfully
+
+!ENTRY org.mule.tooling.core 1 0 2019-06-12 14:14:32.694
+!MESSAGE Reusing tooling instance
+
+!ENTRY org.mule.tooling.core 1 0 2019-06-12 14:14:32.710
+!MESSAGE Tooling path: C:\Users\Training\Desktop\AnypointStudio\configuration\org.eclipse.osgi\425\data\.runtimes\tooling-rnocc2kl
+
+!ENTRY org.mule.tooling.core 1 0 2019-06-12 14:14:32.710
+!MESSAGE Tooling version: 4.2.0
+
+!ENTRY org.mule.tooling.core 1 0 2019-06-12 14:14:32.710
+!MESSAGE Starting tooling instance
+
+!ENTRY org.mule.tooling.core 1 0 2019-06-12 14:14:32.726
+!MESSAGE Tooling startup timeout: 90s
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2019-06-12 14:15:51.819
+!MESSAGE No repository found at http://download.eclipse.org/usssdk/drops/nightly/N997.
+
+!ENTRY org.mule.tooling.core 1 0 2019-06-12 14:15:57.975
+!MESSAGE Tooling up and running
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 14:18:47.757
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 14:23:49.134
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 1 0 2019-06-12 14:24:03.744
+!MESSAGE Tooling workspace is D:\Mulesoft\.tooling-apps-cache
+
+!ENTRY org.eclipse.jface 2 0 2019-06-12 14:24:04.589
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-06-12 14:24:04.589
+!MESSAGE A conflict occurred for CTRL+SHIFT+X:
+Binding(CTRL+SHIFT+X,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.upperCase,To Upper Case,
+		Changes the selection to upper case,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@822e8a1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+Binding(CTRL+SHIFT+X,
+	ParameterizedCommand(Command(org.mule.tooling.runtime.muleLaunchShortcut.run,Run Mule Application,
+		Run Mule Application,
+		Category(org.mule.tooling.runtime.ui.category,Runtime Category,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6b544b7c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-06-12 14:24:04.589
+!MESSAGE A conflict occurred for CTRL+SHIFT+F:
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.format,Format,
+		Format the selected text,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1bb6a158,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.mule.tooling.ui.openFlow,Open Flow,
+		Search For Flows in the current workspace,
+		Category(org.eclipse.core.commands.categories.autogenerated,Uncategorized,Commands that were either auto-generated or have no category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@446dcab3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2019-06-12 14:24:08.667
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-06-12 14:24:08.667
+!MESSAGE A conflict occurred for F2:
+Binding(F2,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@12464b1c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F2,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.showInformation,Show Tooltip Description,
+		Displays information for the current caret location in a focused hover,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@392b9329,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2019-06-12 14:24:15.730
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-06-12 14:24:15.730
+!MESSAGE A conflict occurred for CTRL+F:
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findReplace,Find and Replace,
+		Find and replace text,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@24e14ca6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.mule.tooling.ui.dfl.contribution.commands.searchCommand,Find/Replace,
+		Find/Replace,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@77c001d7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.mule.tooling.commands.focusSearchCommand,Focus Search Command,
+		Focus Search in Palette,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@47174ef0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+
+!ENTRY org.mule.tooling.maven 1 0 2019-06-12 14:24:31.323
+!MESSAGE  *** 25093 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.mule.tooling.maven 1 0 2019-06-12 14:26:08.886
+!MESSAGE  *** 8109 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.mule.tooling.maven 1 0 2019-06-12 14:26:56.952
+!MESSAGE  *** 6019 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.mule.tooling.maven 1 0 2019-06-12 14:27:11.095
+!MESSAGE  *** 5575 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 14:28:50.267
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 14:33:51.939
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 14:38:53.439
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 14:43:54.939
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 14:48:55.924
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 14:53:57.408
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 14:58:58.940
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 15:04:01.534
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 15:09:02.815
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 15:14:04.143
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 15:19:05.161
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 15:24:06.802
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 15:29:08.028
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.ui.contribution.munit 1 1 2019-06-12 15:29:59.872
+!MESSAGE Deleting MUnit temporary folder in C:\Users\Training\AppData\Local\Temp\munit-temp-dir
+
+!ENTRY org.mule.tooling.core 4 0 2019-06-12 15:30:01.075
+!MESSAGE There was a problem while sending events to Amplitude
+!STACK 0
+com.mulesoft.telemetry.SendBundleException: Error response from POST to https://studio-metrics-report.cloudhub.io/api/eventnewformat. Status: (405) Not Allowed
+	at com.mulesoft.telemetry.TelemetryHttpClient.send(TelemetryHttpClient.java:114)
+	at com.mulesoft.telemetry.DefaultTelemetryService.send(DefaultTelemetryService.java:234)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendEvents(DefaultTelemetryService.java:226)
+	at com.mulesoft.telemetry.DefaultTelemetryService.sendAllPendingEvents(DefaultTelemetryService.java:290)
+	at com.mulesoft.telemetry.DefaultTelemetryService.shutdownWhenStarted(DefaultTelemetryService.java:301)
+	at com.mulesoft.telemetry.AbstractTelemetryService.shutdown(AbstractTelemetryService.java:64)
+	at org.mule.tooling.analytics.telemetry.TelemetryAnalyticsService.shutdown(TelemetryAnalyticsService.java:240)
+	at org.mule.tooling.analytics.AnalyticsPlugin.stop(AnalyticsPlugin.java:62)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:835)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:828)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:947)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1675)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1594)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.mule.tooling.analytics 1 0 2019-06-12 15:30:01.091
+!MESSAGE Analytics shutdown successfully
