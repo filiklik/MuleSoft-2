@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="account" format="json">
+      <types:shape format="weave" example="examples/accounts.json"><![CDATA[%dw 2.0
+
+type account = Array<{|  accountID: Number {"typeId": "int"},   country: String,   street: String,   state: String,   name: String,   city: String,   postal: String|}> {"example": "[{\"accountID\":5039,\"country\":\"United States\",\"street\":\"77 Geary Street\",\"state\":\"California\",\"name\":\"Maxine Mule\",\"city\":\"San Francisco\",\"postal\":\"94108\"},{\"accountID\":5043,\"country\":\"United States\",\"street\":\"77 Geary Street\",\"state\":\"California\",\"name\":\"Max Mule\",\"city\":\"San Francisco\",\"postal\":\"94108\"}]"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#bc352be9-6743-4836-81c2-f72cd988a18f">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="account"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#3a427da5-54a5-4e51-af07-586bfcd29ac5">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="account"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#6c318f6c-2704-4eba-bf51-8db01b0bf717">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="account"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#6b29ad32-7a96-49ec-8f59-8e3c7b11af7d">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:variables>
+          <types:variable name="id" type="account"/>
+        </types:variables>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#4cfce591-e7af-4046-96f7-0aefb0ac0052">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="account"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

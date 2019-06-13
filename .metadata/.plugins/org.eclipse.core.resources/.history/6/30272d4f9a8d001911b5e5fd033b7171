@@ -1,0 +1,127 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/00862bad-a562-4318-a314-b235335a7dcb/ # 
+version: v1
+title: Accounts API
+
+types:
+  Account: !include datatypes/account.raml
+  AccountNoID: !include datatypes/account.raml
+
+/accounts:
+  get:
+    queryParameters:
+      country:
+        required: false
+        type: string
+      name:
+        required: false
+        type: string
+      type:
+        required: true
+        type: string
+        enum: ["personal", "business"]
+    responses:
+      400:
+        body:
+          application/json:
+            example: {
+              "message": "Error retrieving data from the Account database."
+            }
+      200:
+        body:
+          application/json:
+            type: Account[]
+            examples: !include examples/accountsExample.raml
+  post:
+    body:
+      application/json:
+        type: AccountNoID[]
+        examples: !include examples/accountsExampleNoID.raml
+    responses:
+      400:
+        body:
+          application/json:
+             example: {
+               "message": "Error creating accounts. Please check the JSON object and make sure it's valid."
+             }
+      201:
+        body:
+          application/json:
+            examples: {
+              "message": "Accounts uploaded (but not really)."
+            }
+  /{id}:
+    get:
+      responses:
+        400:
+          body:
+            application/json:
+              example: {
+                "message": "Error retrieving account for the provided id. Please check whether the provided id is valid."
+              } 
+        200:
+          body:
+            application/json:
+              type: Account
+              examples:
+                !include examples/accountExample.raml
+    put:
+      body: 
+        application/json:
+          type: AccountNoID
+      responses:
+        400:
+          body:
+            application/json:
+              example: {
+                "message": "Error in replacing the account. Please check the JSON object and make sure it's valid."
+              }
+        200:
+          body: 
+            application/json:
+              example: {
+                "message": "Account replaced (but not really)"
+              }
+    patch:
+      description: Endpoint to modify the associated account.
+      headers:
+        Requester-ID:
+          description: id of the person requesting the accounts information
+          required: true
+      body: 
+        application/json:
+          description: The given expected object can contain one field or all fields for Account that need to be modified.
+          type: AccountNoID
+      responses: 
+        400:
+          body:
+            application/json:
+              example: {
+                "mesage": "Error modifying the account. Please check the JSON object and make sure it's valid."
+              }
+        200:
+          body: 
+            application/json:
+              example: {
+                "message": "Account modified (but not really)"
+              }
+
+    delete:
+      description: Endpoint to delete the associated account.
+      headers:
+        Requester-ID:
+          description: id of the person requesting the accounts information
+          required: true
+      responses:
+        400: 
+          body:
+            application/json:
+              example: {
+                "message": "Error deleting account. Please check the account id supplied."
+              }
+        200:
+          body:
+            application/json:
+              example: {
+                "message": "Account deleted (but not really)"
+              }
