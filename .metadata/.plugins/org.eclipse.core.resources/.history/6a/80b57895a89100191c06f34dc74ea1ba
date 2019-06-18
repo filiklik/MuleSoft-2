@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="a107fe26-2ffe-46d5-911f-fe440c912b22" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="c366697c-14b8-4bf8-8b3d-b500a0f0670d" >
+		<http:request-connection host="localhost" port="8081" />
+	</http:request-config>
+	<flow name="helloFlow" doc:id="ed67fbb4-0aae-4230-ba40-525ebb1136ec" >
+		<http:listener doc:name="GET /hello" doc:id="3293f688-8165-449c-8cf0-d45c103547c0" config-ref="HTTP_Listener_config" path="/hello" allowedMethods="GET">
+			<http:response reasonPhrase="Successfull" >
+				<http:headers ><![CDATA[#[output application/java
+---
+{
+	"name" : "Max"
+}]]]></http:headers>
+			</http:response>
+		</http:listener>
+		<set-payload value='#["Hello"]' doc:name="Hello" doc:id="d61c9ee9-c82d-43ec-98f4-7a35e72f1625" />
+		<http:request method="GET" doc:name=" GET /goodbye" doc:id="ac3b0f47-98df-4353-8e13-ab18519e0c9e" path="/goodbye" config-ref="HTTP_Request_configuration" responseTimeout="300000"/>
+		<logger level="INFO" doc:name="Logger" doc:id="dc6a9273-e5a3-42c5-addb-51db4547d7c0" message="#['\nMessage: ' ++ payload]]"/>
+	</flow>
+	<flow name="goodbyeFlow" doc:id="507b6cb5-d9a5-45ed-91ea-8f0943f3566c" >
+		<http:listener doc:name="GET /goodbye" doc:id="50956dd1-71f0-4b73-b116-ac4b9764576f" config-ref="HTTP_Listener_config" path="/goodbye" allowedMethods="GET"/>
+		<set-payload value="#[upper('Goodbye')]" doc:name="Goodbye" doc:id="7132b47d-9fc5-4d3c-b673-d569c2db9d05" />
+		<logger level="INFO" doc:name="fullName" doc:id="3407edc1-04a4-4904-82bb-70e73affc64a" />
+	</flow>
+</mule>

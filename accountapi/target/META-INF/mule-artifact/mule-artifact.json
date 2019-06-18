@@ -22,6 +22,7 @@
         "api/examples/accountsExample.raml",
         "api/examples/accountsExampleNoID.raml",
         "application-types.xml",
+        "examples/accounts-1.json",
         "examples/accounts.json",
         "log4j2.xml"
       ]

@@ -1,5 +1,9 @@
 {
   "sampleData": {
-    "4cfce591-e7af-4046-96f7-0aefb0ac0052": {}
+    "4cfce591-e7af-4046-96f7-0aefb0ac0052": {},
+    "09f53248-2613-4a0b-ab8e-7efba5cea4d1": {},
+    "bc352be9-6743-4836-81c2-f72cd988a18f": {
+      "payload": "sample_data/list_object_1.dwl"
+    }
   }
 }

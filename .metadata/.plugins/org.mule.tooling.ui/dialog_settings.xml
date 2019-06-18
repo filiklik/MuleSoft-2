@@ -2,4 +2,6 @@
 <section name="Workbench">
 	<section name="MuleZippedProjectImportWizard">
 	</section>
+	<section name="MuleProjectImportWizard">
+	</section>
 </section>

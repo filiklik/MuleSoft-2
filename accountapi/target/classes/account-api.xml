@@ -178,7 +178,7 @@ output application/json
 		<flow-ref doc:name="Flow Reference" doc:id="a6fdcf2f-3be6-4a3f-a062-9012d2359232" name="getAccountByType"/>
     </flow>
     <flow name="get:\accounts\(id):account-api-config">
-		<flow-ref doc:name="Flow Reference" doc:id="3a427da5-54a5-4e51-af07-586bfcd29ac5" name="getAccountById"/>
+		<flow-ref doc:name="Flow Reference" doc:id="3a427da5-54a5-4e51-af07-586bfcd29ac5" name="Copy_of_getAccountByType"/>
     </flow>
     <flow name="post:\accounts:application\json:account-api-config">
         <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">

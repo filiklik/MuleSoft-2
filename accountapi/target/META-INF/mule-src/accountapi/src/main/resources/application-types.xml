@@ -2,11 +2,25 @@
 <types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
   <types:catalog>
     <types:type name="account" format="json">
-      <types:shape format="weave" example="examples/accounts.json"><![CDATA[%dw 2.0
+      <types:shape format="weave" example="api/example/accountsExample.json"><![CDATA[%dw 2.0
 
-type account = Array<{|  accountID: Number {"typeId": "int"},   country: String,   street: String,   state: String,   name: String,   city: String,   postal: String|}> {"example": "[{\"accountID\":5039,\"country\":\"United States\",\"street\":\"77 Geary Street\",\"state\":\"California\",\"name\":\"Maxine Mule\",\"city\":\"San Francisco\",\"postal\":\"94108\"},{\"accountID\":5043,\"country\":\"United States\",\"street\":\"77 Geary Street\",\"state\":\"California\",\"name\":\"Max Mule\",\"city\":\"San Francisco\",\"postal\":\"94108\"}]"}
+type account = Array<{|  id: String,   firstName: String,   lastName: String,   address: String,   postal: String,   country: String,   creationDate: String,   accountType: String,   miles: Number {"typeId": "int"}|}> {"example": "[{\"id\":\"1\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"address\":\"1002 Main Street, Springfield TX\",\"postal\":\"77002\",\"country\":\"USA\",\"creationDate\":\"2016-01-04T12:48:19+00:00\",\"accountType\":\"personal\",\"miles\":8492},{\"id\":\"2\",\"firstName\":\"Annabelle\",\"lastName\":\"Simpson\",\"address\":\"20230 Boobear Blvd, Los Angeles CA\",\"postal\":\"94201\",\"country\":\"USA\",\"creationDate\":\"2017-04-30T14:12:25+00:00\",\"accountType\":\"personal\",\"miles\":61844},{\"id\":\"3\",\"firstName\":\"Bjorn\",\"lastName\":\"Yeti\",\"address\":\"18491 Instant Ave, Cleveland OH\",\"postal\":\"238301-7481\",\"country\":\"USA\",\"creationDate\":\"2017-01-03T04:48:14+00:00\",\"accountType\":\"personal\",\"miles\":1948}]"}
 
 ]]></types:shape>
+    </types:type>
+    <types:type name="accountdata" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: object
+properties: 
+  id: string
+  firstName: string
+  lastName: string
+  address: string
+  postal: string
+  country: string
+  creationDate: datetime
+  accountType: string
+  miles: integer]]></types:shape>
     </types:type>
   </types:catalog>
   <types:enrichment select="#bc352be9-6743-4836-81c2-f72cd988a18f">
@@ -46,6 +60,42 @@ type account = Array<{|  accountID: Number {"typeId": "int"},   country: String,
     </types:processor-declaration>
   </types:enrichment>
   <types:enrichment select="#4cfce591-e7af-4046-96f7-0aefb0ac0052">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="account"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#dd9fe39c-17cb-47e8-bef2-4d10ce5a121b">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="account"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#6f94c77f-c636-4bfa-aef7-565def49ec9b">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="account"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#09f53248-2613-4a0b-ab8e-7efba5cea4d1">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="account"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#52da4854-97d1-4a25-a1e4-5ba3e1e3269a">
     <types:processor-declaration>
       <types:output-event>
         <types:message>
