@@ -4,10 +4,8 @@
 <booleanAttribute key="consoleEnabled" value="true"/>
 <stringAttribute key="launch_mule_server_version" value="org.mule.tooling.server.4.2.0.ee"/>
 <stringAttribute key="maven.command.line" value=""/>
-<stringAttribute key="mule-agent-port" value="55059"/>
-<listAttribute key="mule-project-names">
-<listEntry value="apdev-demo"/>
-</listAttribute>
+<stringAttribute key="mule-agent-port" value="62111"/>
+<listAttribute key="mule-project-names"/>
 <booleanAttribute key="org.eclipse.jdt.launching.ALLOW_TERMINATE" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="apdev-demo"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-M-XX:-UseBiasedLocking"/>
