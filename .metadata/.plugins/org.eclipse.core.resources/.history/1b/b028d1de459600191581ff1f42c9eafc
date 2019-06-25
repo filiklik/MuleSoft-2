@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b2e1a0f7-9f5f-46cd-a264-fb67b2c1fd6e" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="dbc39df5-8704-4008-8864-ea3b056cbde7" >
+		<http:request-connection host="localhost" port="8081" />
+	</http:request-config>
+	<flow name="helloFlow" doc:id="51521ce6-eb36-467f-b63f-af8caf0bcc04" >
+		<http:listener doc:name="GET /hello" doc:id="d6758468-f2c9-43a8-b901-b6277b0297be" config-ref="HTTP_Listener_config" path="/hello" allowedMethods="GET">
+			<http:response >
+				<http:headers ><![CDATA[#[output application/java
+---
+{
+	"name" : "Max"
+}]]]></http:headers>
+			</http:response>
+		</http:listener>
+		<set-payload value="hello" doc:name="Hello" doc:id="355d7817-1d1a-4e8e-b5a3-a28aef4dea2b" />
+		<http:request method="GET" doc:name="GET /goodbye" doc:id="c5ce7b78-2ea0-41ec-9a9e-ccee4b30edaa" config-ref="HTTP_Request_configuration" responseTimeout="30000" path="/goodbye"/>
+		<logger level="INFO" doc:name="Logger" doc:id="9eb25eb1-d9f5-4b87-9b89-79952672b5c5" message="donedone"/>
+	</flow>
+	<flow name="goodbyeFlow" doc:id="f7b02d5f-3512-419d-8389-a657ebc67d02" >
+		<http:listener doc:name="GET /goodbye" doc:id="f7fe348b-ebb4-47c2-82e5-1d7808548854" config-ref="HTTP_Listener_config" path="/goodbye"/>
+		<set-payload value="Goodbye" doc:name="Goodbye" doc:id="41fa91c1-948e-419a-8cd8-ef1307278315" />
+	</flow>
+</mule>

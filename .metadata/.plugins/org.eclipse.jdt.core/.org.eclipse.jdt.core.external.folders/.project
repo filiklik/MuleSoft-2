@@ -10,52 +10,47 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>.link10</name>
+			<name>.link0</name>
 			<type>2</type>
 			<location>C:/Users/Training/Desktop/AnypointStudio/plugins/org.mule.tooling.server.4.2.0.ee_7.3.4.201905081553/mule/lib/boot/exec</location>
 		</link>
 		<link>
-			<name>.link11</name>
-			<type>2</type>
-			<location>C:/Users/Training/Desktop/AnypointStudio/plugins/org.mule.tooling.server.4.2.0.ee_7.3.4.201905081553/mule/lib/mule/repository</location>
-		</link>
-		<link>
-			<name>.link12</name>
+			<name>.link1</name>
 			<type>2</type>
 			<location>C:/Users/Training/Desktop/AnypointStudio/plugins/org.mule.tooling.server.4.2.0.ee_7.3.4.201905081553/mule/services/api-gateway-contract-service-1.1.0</location>
 		</link>
 		<link>
-			<name>.link13</name>
+			<name>.link2</name>
 			<type>2</type>
 			<location>C:/Users/Training/Desktop/AnypointStudio/plugins/org.mule.tooling.server.4.2.0.ee_7.3.4.201905081553/mule/services/api-gateway-events-collector-service-1.1.0</location>
 		</link>
 		<link>
-			<name>.link14</name>
+			<name>.link3</name>
 			<type>2</type>
 			<location>C:/Users/Training/Desktop/AnypointStudio/plugins/org.mule.tooling.server.4.2.0.ee_7.3.4.201905081553/mule/services/mule-service-http-ee-1.4.0</location>
 		</link>
 		<link>
-			<name>.link15</name>
+			<name>.link4</name>
 			<type>2</type>
 			<location>C:/Users/Training/Desktop/AnypointStudio/plugins/org.mule.tooling.server.4.2.0.ee_7.3.4.201905081553/mule/services/mule-service-oauth-1.2.0</location>
 		</link>
 		<link>
-			<name>.link16</name>
+			<name>.link5</name>
 			<type>2</type>
 			<location>C:/Users/Training/Desktop/AnypointStudio/plugins/org.mule.tooling.server.4.2.0.ee_7.3.4.201905081553/mule/services/mule-service-scheduler-1.2.0</location>
 		</link>
 		<link>
-			<name>.link17</name>
+			<name>.link6</name>
 			<type>2</type>
 			<location>C:/Users/Training/Desktop/AnypointStudio/plugins/org.mule.tooling.server.4.2.0.ee_7.3.4.201905081553/mule/services/mule-service-soap-1.2.0</location>
 		</link>
 		<link>
-			<name>.link18</name>
+			<name>.link7</name>
 			<type>2</type>
 			<location>C:/Users/Training/Desktop/AnypointStudio/plugins/org.mule.tooling.server.4.2.0.ee_7.3.4.201905081553/mule/services/mule-service-weave-ee-2.2.0</location>
 		</link>
 		<link>
-			<name>.link19</name>
+			<name>.link8</name>
 			<type>2</type>
 			<location>C:/Users/Training/Desktop/AnypointStudio/plugins/org.mule.tooling.server.4.2.0.ee_7.3.4.201905081553/mule/conf</location>
 		</link>
