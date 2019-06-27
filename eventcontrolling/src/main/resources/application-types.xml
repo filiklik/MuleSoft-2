@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="json1" format="json">
+      <types:shape format="weave" example="examples/Sample1.json"><![CDATA[%dw 2.0
+
+type json1 = {|
+  name: String, 
+  age: Number {"typeId": "int"}, 
+  rights: Array<{|    roleName: String,     roleIds: Array<Number {"typeId": "int"}>
+  |}>
+|} {"example": "{\"name\":\"Admin\",\"age\":36,\"rights\":[{\"roleName\":\"admin\",\"roleIds\":[1,2,3]},{\"roleName\":\"editor\",\"roleIds\":[4,5,6]},{\"roleName\":\"contributor\",\"roleIds\":[7,8,9]}]}"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="json2" format="json">
+      <types:shape format="weave" example="examples/Sample2.json"><![CDATA[%dw 2.0
+
+type json2 = {|
+  name: String, 
+  course: String, 
+  rights: Array<{|    roleName: String,     roleIds: Array<Number {"typeId": "int"}>
+  |}>
+|} {"example": "{\"name\":\"Admin\",\"course\":\"M.tech\",\"rights\":[{\"roleName\":\"admin\",\"roleIds\":[11,12,13]},{\"roleName\":\"editor\",\"roleIds\":[14,15,16]},{\"roleName\":\"contributor\",\"roleIds\":[17,18,19]}]}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#52656ed0-ccd3-4520-894e-44daaf31e607">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="json1"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#ee72f320-4df5-4f73-96ca-d9ac84cdb31a">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="json2"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#d23c1287-029d-4ed8-b336-6a7760641a18"/>
+</types:mule>

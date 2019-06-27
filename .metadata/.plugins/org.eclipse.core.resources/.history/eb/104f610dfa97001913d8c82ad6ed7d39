@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="choiceFlow" doc:id="03aea549-9e8b-4a77-8f84-86ed8336d358" >
+		<http:listener doc:name="Listener" doc:id="8d0171a7-b7fe-49b6-be92-ee670f76e017" config-ref="HTTP_Listener_config" path="/ch"/>
+		<set-payload doc:name="Set Payload" doc:id="59a1a310-322b-45c6-b118-30fbf57bd85d" value="payload"/>
+		<logger level="INFO" doc:name="Logger" doc:id="abef062e-43fa-4e1b-9ab0-b8d9bb870f6e" message="#[payload]"/>
+		<choice doc:name="Choice" doc:id="a11ea19b-7ec4-44fb-9633-2ea17580435d" tracking:enable-default-events="true">
+			<when doc:id="bf3f9bb4-c746-4de2-af1f-c2439222dca5" expression="#[payload contains 'id']">
+				<logger level="INFO" doc:name="Logger" doc:id="47387566-45d2-4e4b-b74e-b93b1e5b9e94" message="Successfull"/>
+				<ee:transform doc:name="Transform Message" doc:id="d23c1287-029d-4ed8-b336-6a7760641a18" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+       "id": payload.id as String,
+       "name": 
+       		if(payload.first_name?)
+       			payload.first_name ++ " " ++ payload.last_name
+       		else "",
+       "schooldetails" : 
+       		if(payload.schoolName?)
+       			payload.schoolName ++ " " ++ payload.schoolYear
+       		else 
+       			"School details are not present",
+       "current date" :  now()
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<otherwise >
+				<logger level="INFO" doc:name="Logger" doc:id="53f99ae1-564c-4b17-aae2-dc51a90b66f8" message="Unsuccessfull"/>
+				<ee:transform doc:name="Transform Message" doc:id="8770f530-34f5-477e-ac2e-a8a50c6e54ee" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+       "id": "123abc",
+       "current date" :  now()
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</otherwise>
+		</choice>
+		<logger level="INFO" doc:name="Logger" doc:id="55925f44-db4e-4442-87f8-223f5099bbe5" message="#[payload]"/>
+	</flow>
+</mule>

@@ -1,0 +1,16 @@
+
+{
+
+    "name" : "Admin",
+
+    "course" : "M.tech",
+
+    "rights" :
+
+         [{"roleName" : "admin", "roleIds" : [11,12,13] },
+
+        {"roleName" : "editor", "roleIds" : [14,15,16] },
+
+       {"roleName" : "contributor", "roleIds" : [17,18,19]}]
+
+}

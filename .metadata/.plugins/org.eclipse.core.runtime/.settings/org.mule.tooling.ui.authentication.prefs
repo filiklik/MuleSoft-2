@@ -1,6 +1,4 @@
-authenticated.users=[{"id"\:"dcb516ef-7783-407f-ba96-253d4868a47f","token"\:"b3b8140e-a649-4903-8787-48dd2dda9a32","userId"\:"gauravchauhan","refreshToken"\:"","baseUrl"\:"https\://anypoint.mulesoft.com/"}]
-current.token=b3b8140e-a649-4903-8787-48dd2dda9a32
-current.user=gauravchauhan
+authenticated.users=[{"id"\:"38d07eb0-8fc9-4cbd-b09f-18dced6ca7b9","token"\:"cb40a848-a553-4e45-a87a-7c81af27dbe5","userId"\:"GauravChau","refreshToken"\:"","baseUrl"\:"https\://anypoint.mulesoft.com/"}]
+current.token=cb40a848-a553-4e45-a87a-7c81af27dbe5
+current.user=GauravChau
 eclipse.preferences.version=1
-expiration.time=15
-org.mule.tooling.amc.apps={"userProjectMap"\:{"gauravchauhan"\:{"muledemo"\:"{\\"applicationName\\"\:\\"deployfirst\\",\\"muleRuntime\\"\:\\"4.2.0\\",\\"properties\\"\:{}}"}}}

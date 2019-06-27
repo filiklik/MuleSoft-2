@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="getAmericanFlights" doc:id="05bd7db1-d921-46c7-9a1a-d0e2804f9c04" >
+		<http:listener doc:name="GET /american" doc:id="75968d05-b724-4ebf-8bde-a7de5a5f8a45" config-ref="HTTP_Listener_config" path="/american"/>
+	</flow>
+</mule>
