@@ -1,15 +1,1 @@
 INDEX VERSION 1.130+D:\MuleSoft\.metadata\.plugins\org.eclipse.jdt.core
-3073962201.index
-3186641274.index
-2376816241.index
-4205602535.index
-269851298.index
-2454292286.index
-3910715757.index
-1496748533.index
-3225403471.index
-2216499802.index
-2459128094.index
-713818288.index
-59544796.index
-1757691222.index

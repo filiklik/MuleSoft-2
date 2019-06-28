@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:american-flights-api="http://www.mulesoft.org/schema/mule/american-flights-api" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/american-flights-api http://www.mulesoft.org/schema/mule/american-flights-api/current/mule-american-flights-api.xsd">
+	<american-flights-api:config name="American_Flights_API_Config" doc:name="American Flights API Config" doc:id="dc6787ac-a4dc-4ee4-9d30-03d3a8ff012a" property_host="training4-american-api.cloudhub.io" property_port="80" property_protocol="HTTP" />
+	<flow name="getAmericanFlights" doc:id="05bd7db1-d921-46c7-9a1a-d0e2804f9c04" >
+		<http:listener doc:name="GET /american" doc:id="75968d05-b724-4ebf-8bde-a7de5a5f8a45" config-ref="HTTP_Listener_config" path="/american" allowedMethods="GET"/>
+		<flow-ref doc:name="setCode" doc:id="01d0a8e3-3068-4b25-b9dc-72e074695e47" name="setCode"/>
+		<american-flights-api:get-flights doc:name="Get flights" doc:id="af69d7ae-f42b-492f-8c12-dc43757b4939" client-id="${american.client_id}" client-secret="${american.client_secret}" config-ref="American_Flights_API_Config" destination="#[vars.code]"/>
+	</flow>
+	<sub-flow name="setCode" doc:id="fc8aa8a5-9376-4380-a4f4-6a14d6f3faec" >
+		<set-variable value="#[attributes.queryParams.code default 'SFO']" doc:name="Set Variable" doc:id="5616cd62-3cc2-4fb9-a269-b3538f731440" variableName="code"/>
+	</sub-flow>
+	<flow name="implementationFlow" doc:id="04060a70-d34b-476e-8484-3114a376ee1f" >
+		<http:listener doc:name="GET /united" doc:id="b45915c3-8b86-4322-b884-d722cc67c87d" config-ref="HTTP_Listener_config" path="/united"/>
+	</flow>
+</mule>
