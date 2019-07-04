@@ -1,7 +1,0 @@
-http:
-  port: "8081"
-  
-  sfdc:
-    username:
-    password:
-    token: "LfiXAmTI2mKfyPUE83uSJmdQN"

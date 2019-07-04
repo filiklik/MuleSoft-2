@@ -1,6 +1,0 @@
-http:
-  port: 8081
-  host: "0.0.0.0"
-  flights: "/flights"
-  processData: "/processData"
-  url: "http://mu.learn.mulesoft.com/essentials/american"

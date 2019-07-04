@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	xmlns:american-flights-api="http://www.mulesoft.org/schema/mule/american-flights-api"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/american-flights-api http://www.mulesoft.org/schema/mule/american-flights-api/current/mule-american-flights-api.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<configuration-properties doc:name="Configuration properties" doc:id="a2c77a94-ed0f-4b3a-aa44-a9b02a5fa0a3" file="config.yaml"/>
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="16a3449f-d9e2-4937-8bd7-80a8a3efe3a1" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<american-flights-api:config name="American_Flights_API_Config1" doc:name="American Flights API Config" doc:id="4b0b78ac-bdbc-4518-9839-21b60eecfd0a" property_host="${american.host}" property_port="${american.port}" property_protocol="${american.protocol}" property_basePath="/${american.basepath}" />
+	<http:request-config name="HTTP_Request_config_training" doc:name="HTTP Request configuration" doc:id="ef8c0c55-a6c1-400b-a7ff-5d491edf5f5e" basePath="/${training.basepath}" >
+		<http:request-connection host="${training.host}" port="${training.port}" />
+	</http:request-config>
+	<wsc:config name="Delta_Web_Service_Consumer_Config" doc:name="Web Service Consumer Config" doc:id="9464cbb8-8460-496a-b450-554c144b94cc" >
+		<wsc:connection wsdlLocation="${delta.wsdl}" service="TicketServiceService" port="TicketServicePort" address="http://mu.learn.mulesoft.com/delta"/>
+	</wsc:config>
+	<configuration doc:name="Configuration" doc:id="0a9f10e2-8cd0-4099-a48b-8e564aa44912" defaultErrorHandler-ref="globalError_Handler" />
+	<error-handler name="globalError_Handler" doc:id="ef8a6f6f-a97d-4cde-a6e0-a217d5d60e89" >
+		<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="adc7151d-ba0b-47a7-a536-3803ce5227c5" type="ANY">
+			<ee:transform doc:name="error.description" doc:id="f211a8f5-2320-4ca5-a40a-8456ee838d05">
+				<ee:message>
+					<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"Error Message" : error.description
+}]]></ee:set-payload>
+				</ee:message>
+			</ee:transform>
+		</on-error-propagate>
+		<on-error-propagate enableNotifications="true" logException="true" doc:name="WSC:CONNECTIVITY and WSC:INVALID_WSDL" doc:id="9bae4c63-3f30-452c-9d21-d39610c72cad" type="ANY"/>
+	</error-handler>
+</mule>

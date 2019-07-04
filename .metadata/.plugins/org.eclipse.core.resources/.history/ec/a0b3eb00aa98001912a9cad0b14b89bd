@@ -1,5 +1,0 @@
-http:
-  port: "8081"
-  host: "0.0.0.0"
-  paths: "/flights"
-  url: http://mu.learn.mulesoft.com/essentials/american/{destination}

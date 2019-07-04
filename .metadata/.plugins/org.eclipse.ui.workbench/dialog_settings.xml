@@ -26,7 +26,15 @@
 	<section name="ImportExportAction">
 		<item value="org.mule.tooling.ui.muleZipProjectImportWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.mule.tooling.ui.muleImportCategory"/>
+		</list>
+	</section>
+	<section name="ZipFileImportWizard">
+		<item value="false" key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
+		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\Training\Downloads\MUFundamentals4.1_DIYexercises_21sept2018\files\module08\accounts-transactions-mod08-api.zip"/>
+			<item value="C:\Users\Training\Downloads\MUFundamentals4.1_DIYexercises_21sept2018\files\module03\accounts-mod03-api-solution.zip"/>
 		</list>
 	</section>
 </section>
