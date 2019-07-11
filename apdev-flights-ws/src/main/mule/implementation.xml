@@ -48,7 +48,9 @@ http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mu
 		</choice>
 		<ee:transform doc:name="[Flight] to JSON"
 			doc:id="87d49d55-5722-48cf-8872-9914d0e5d9cc">
+			
 			<ee:message>
+			
 				<ee:set-payload><![CDATA[%dw 2.0
 output application/json
 ---
@@ -304,19 +306,20 @@ output application/xml
 import dasherize from dw::core::Strings
 type Currency = String {format: "###.00"}
 type Flight = Object {class: "com.mulesoft.training.Flight"}
-fun getNumSeats(planeType: String) =
+/*fun getNumSeats(planeType: String) =
      if (planeType contains('737'))
           150
      else
           300
+ */
 ---
 using(flights=
-	payload.. map(object,index)->{
+	payload map(object,index)->{
 	destination: object.toAirportCode,
 	price: object.price as Number as Currency,
 	//totalSeats: getNumSeats(object.planeType as String),
-	//totalSeats: lookup("getTotalSeats"),
-	//planeType: dasherize(replace(object.planeType,/(Boing)/) with "Boeing"),
+	//totalSeats: lookup("getTotalSeats", {plainType: object.plainType}),
+	planeType: dasherize(replace(object.planeType,/(Boing)/) with "Boeing"),
 	departureDate: object.departureDate,
 	availableSeats: object.emptySeats
 }as Object
@@ -329,8 +332,8 @@ using(flights=
 		<logger level="INFO" doc:name="Logger"
 			doc:id="394def2a-5f80-4c62-a71a-648e4aa56445" message="#[payload]"/>
 	</flow>
-	<flow name="getTotalSeats" doc:id="83bb6d21-3a52-404b-8ee3-dc4a026100a0" >
-		<ee:transform doc:name="Transform Message" doc:id="dbf1ee89-82eb-415b-84ac-dba8907b3f11" >
+	<flow name="getTotalSeats" doc:id="56c236fb-0bb5-4617-83a2-89ec78e4faee" >
+		<ee:transform doc:name="Transform Message" doc:id="ea6e0aff-1765-4156-8c13-ffdba21ddfc5" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/java

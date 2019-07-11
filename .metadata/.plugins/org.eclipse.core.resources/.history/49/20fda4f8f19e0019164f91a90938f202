@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="e0c9d79f-3f5d-4020-be93-ccd85fd73b37" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="filehandlingFlow" doc:id="8089b6e2-c635-4df1-8578-e0cdedaf0dd6" >
+		<file:listener doc:name="On New or Updated File" doc:id="ddd9c554-f253-4b31-bd23-e8579faac194" moveToDirectory="D:\MuleSoft\filehandling\src\main\resources\output" directory="D:\MuleSoft\filehandling\src\main\resources\input">
+			<scheduling-strategy >
+				<fixed-frequency />
+			</scheduling-strategy>
+			<file:matcher filenamePattern="#[*.csv]" />
+		</file:listener>
+		<logger level="INFO" doc:name="Logger" doc:id="9653afe6-63b8-4d0f-9a62-664ddbdc1722" message="#[payload]"/>
+	</flow>
+	<flow name="filehandlingFlow1" doc:id="a2893bbc-ae66-43a2-90fc-19249a5bdff4" >
+		<http:listener doc:name="Listener" doc:id="1c83dca2-efe7-4396-a86d-1dda91d4913f" config-ref="HTTP_Listener_config" path="/foreach">
+			<http:response >
+				<http:body ><![CDATA[#[{
+	"abc": ["red","green","blue"]
+}]]]></http:body>
+			</http:response>
+		</http:listener>
+		<foreach doc:name="For Each" doc:id="d195ee75-b99e-4c3f-973c-77d02eaf8840" />
+	</flow>
+</mule>

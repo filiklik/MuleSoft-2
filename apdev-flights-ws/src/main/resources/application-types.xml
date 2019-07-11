@@ -96,4 +96,13 @@ type flights_json = Array<{|  airline: String,   flightCode: String,   fromAirpo
       </types:input-event>
     </types:processor-declaration>
   </types:enrichment>
+  <types:enrichment select="#ea6e0aff-1765-4156-8c13-ffdba21ddfc5">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="flights_xml"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
 </types:mule>

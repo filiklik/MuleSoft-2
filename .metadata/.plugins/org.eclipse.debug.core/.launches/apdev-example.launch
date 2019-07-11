@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.mule.tooling.runtime.muleServerLaunchType">
-<stringAttribute key="clear_data" value="NEVER"/>
+<stringAttribute key="clear_data" value="PROMPT"/>
 <booleanAttribute key="consoleEnabled" value="true"/>
 <stringAttribute key="launch_mule_server_version" value="org.mule.tooling.server.4.2.0.ee"/>
 <stringAttribute key="maven.command.line" value=""/>
-<stringAttribute key="mule-agent-port" value="58849"/>
+<stringAttribute key="mule-agent-port" value="54486"/>
 <listAttribute key="mule-project-names">
 <listEntry value="apdev-example"/>
 </listAttribute>
