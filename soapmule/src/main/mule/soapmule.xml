@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:jms="http://www.mulesoft.org/schema/mule/jms"
+	xmlns:apikit-soap="http://www.mulesoft.org/schema/mule/apikit-soap" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/apikit-soap http://www.mulesoft.org/schema/mule/apikit-soap/current/mule-apikit-soap.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d63bcfec-e96d-427c-ab66-b9227001f351" >
+		<http:listener-connection host="0.0.0.0" port="8082" />
+	</http:listener-config>
+	<apikit-soap:config name="APIKit_for_SOAP_Configuration" service="Hello_Service" port="Hello_Port" doc:name="APIKit for SOAP Configuration" doc:id="e5905fca-8ac4-403e-aee5-25848a6f0ef4" wsdlLocation="api/tshirt2.wsdl" />
+	<wsc:config name="Web_Service_Consumer_Config" doc:name="Web Service Consumer Config" doc:id="bb36ec32-4780-42b7-a2d9-ca8c3c6163a1" >
+		<wsc:connection wsdlLocation="http://mu.learn.mulesoft.com/delta?wsdl" service="TicketServiceService" port="TicketServicePort" />
+	</wsc:config>
+	<flow name="soapmuleFlow" doc:id="fbc21a3b-21ef-47eb-9ec1-28c9ad170c15" >
+		<http:listener doc:name="Listener" doc:id="97e506e3-3d30-4e62-9c53-290d99a355fa" config-ref="HTTP_Listener_config" path="/HelloService"/>
+		<logger level="INFO" doc:name="Logger" doc:id="54e29db1-a605-4d05-92ca-fdb8900babab" message="#[payload]"/>
+		<apikit-soap:router doc:name="SOAP Router" doc:id="09e86a76-5096-461c-9966-5592121f864c" config-ref="APIKit_for_SOAP_Configuration">
+			<apikit-soap:attributes ><![CDATA[#[{
+	headers:attributes.headers,
+	method: attributes.method,
+	queryString: attributes.queryString 
+}]]]></apikit-soap:attributes>
+		</apikit-soap:router>
+		<logger level="INFO" doc:name="Logger" doc:id="80c92fd6-3988-4d91-b05f-c234a658d0be" message="#[payload]"/>
+	</flow>
+	<flow name="soapmuleFlow1" doc:id="1524c3b9-7374-4c79-b3be-6bade75c6b94" >
+		<http:listener doc:name="Listener" doc:id="5b77cbca-43f9-4e9f-a1eb-939533161edd" config-ref="HTTP_Listener_config" path="/HelloConsume"/>
+		<wsc:consume doc:name="Consume" doc:id="0824dcfa-6235-4d77-88dc-b2647a3c1a7b" config-ref="Web_Service_Consumer_Config" operation="listAllFlights"/>
+		<ee:transform doc:name="Transform Message" doc:id="446ed750-e3d4-468d-98fb-99403a09de30" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+ns ns0 http://soap.training.mulesoft.com/
+---
+{
+	flights: payload.body.ns0#listAllFlightsResponse.*return map ( return , indexOfReturn ) -> {
+		airlineName: return.airlineName default "",
+		price: return.price default 0,
+		departureDate: return.departureDate default "",
+		planeType: return.planeType default "",
+		origin: return.origin default "",
+		code: return.code default "",
+		emptySeats: return.emptySeats default 0,
+		destination: return.destination default ""
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

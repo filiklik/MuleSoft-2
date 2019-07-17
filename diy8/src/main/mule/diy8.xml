@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+	<flow name="AccountFlow" doc:id="c061fe54-f1f2-40fd-8e63-68922f504e24" >
+		<http:listener doc:name="Listener" doc:id="81adc417-33b0-4578-b596-dee39f91060f" path="/accounts" config-ref="HTTP_Listener_config"/>
+		<http:request method="GET" doc:name="Request" doc:id="199d78a9-3bf2-42fb-aa38-8af89619a4d8" url="http://apdev-accounts-ws.cloudhub.io/api/accounts" responseTimeout="300000">
+			<http:headers ><![CDATA[#[output application/java
+---
+{
+	"Requester-ID" : "123"
+}]]]></http:headers>
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"type" : attributes.queryParams.'type' default "business"
+}]]]></http:query-params>
+		</http:request>
+		<set-variable value="#[payload]" doc:name="accountsData" doc:id="afb0e37c-3be5-4c47-bc0a-3f5ef6aa3ca1" variableName="accountsData" />
+		<ee:transform doc:name="Transform Message" doc:id="7581d1bf-3c71-4ced-b1c0-a9eb8b09b99a" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload.*id default []
+	
+	
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<set-variable value="#[payload]" doc:name="AccountIDs" doc:id="b7630974-489a-4067-b6b9-52b6ad85cdaa" variableName="AccountIDs"/>
+		<flow-ref doc:name="Flow Reference" doc:id="ea46e7cf-40a2-42ff-9fd8-93defd78128c" name="GetTransactionForCustomers"/>
+	</flow>
+	<flow name="GetTransactionForCustomers" doc:id="12ea38a8-46d0-4eac-a0b0-c0f940d06940" >
+		<ee:transform doc:name="Transform Message" doc:id="12cdb313-10f7-4df9-811e-bad75dbace8a" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://training.mulesoft.com/
+---
+{
+	ns0#GetTransactionsforCustomers: {
+		customerID: vars.AccountIDs
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="17b00245-ebd7-4b6e-b9de-04a046b747b8" message="payload"/>
+		<wsc:consume doc:name="Consume" doc:id="9fc24861-e6a7-41f6-aaa4-fd3402e1f201" config-ref="Web_Service_Consumer_Config" operation="GetTransactionsforCustomers"/>
+		<ee:transform doc:name="Transform Message" doc:id="7f8e5a6e-6805-4322-95e6-58c856f25b6f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+ns ns0 http://training.mulesoft.com/
+---
+payload.body.ns0#GetTransactionsforCustomersResponse.*transaction map ( transaction , indexOfTransaction ) -> {
+	amount: transaction.amount as String default "",
+	customerRef: transaction.customerRef default "",
+	flightID: transaction.flightID default "",
+	region: transaction.region default "",
+	transactionID: transaction.transactionID default ""
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<set-variable value="#[payload]" doc:name="transactionsData" doc:id="9309b0d3-2116-4875-9e09-feed7e23e26f" variableName="transactionsData"/>
+		<ee:transform doc:name="accounts and transactions data" doc:id="a1e6ede4-7a09-4a9a-a08d-4a387eab208b" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+
+  "accounts": vars.accountsData,
+
+  "transactions": vars.transactionsData
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<ee:transform doc:name="Transform Message" doc:id="3f25a4cd-f868-4017-8f11-bb935c8ceb76" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+
+var directorIDs = ["JKLS483S","FJSA48JD","NMA4FJ9K"]
+
+//Combines Accounts and Transactions by the Account ID. Assigns each account to a
+//director
+fun consolidateAccountsTrans (payload) =
+  payload.accounts map ( (account, index) ->
+  using (id = account.id as String)
+  (
+    account ++
+    {
+      transactions: payload.transactions filter ($.customerRef == id)
+    } ++
+    {
+      assignedDirector: directorIDs[mod(index, sizeOf(directorIDs))]
+    }
+  )
+)
+---
+using (data = consolidateAccountsTrans(payload))
+(data groupBy $.assignedDirector)
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<http:request method="POST" doc:name="Request" doc:id="b895f265-286e-4f0d-b641-89e690320c5d" url="http://apdev-accounts-ws.cloudhub.io/api/accounts_transactions" responseTimeout="1000000"/>
+		<ee:transform doc:name="Transform Message" doc:id="81d363f3-2194-4234-8466-9de94b916059" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	Message : "Processed $(sizeOf(vars.transactionsData)) records"
+} ]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="267e46bb-aece-4fba-939a-7ae935dfef80" message="payload"/>
+	</flow>
+</mule>

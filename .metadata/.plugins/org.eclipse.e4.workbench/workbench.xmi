@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_D9YiUKMAEemhILOlKrLVKg" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_D9YiUaMAEemhILOlKrLVKg" bindingContexts="_D9YnR6MAEemhILOlKrLVKg">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;test.java&quot; tooltip=&quot;apdev-example/src/main/mule/test.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/mule/test.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;accounts.xml&quot; tooltip=&quot;apdev-example/src/main/mule/accounts.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/mule/accounts.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;global.xml&quot; tooltip=&quot;apdev-example/src/main/mule/global.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/mule/global.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.raml.editor&quot; name=&quot;config.yaml&quot; tooltip=&quot;apdev-example/src/main/resources/config.yaml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/resources/config.yaml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;accounts.csv.backup&quot; tooltip=&quot;apdev-example/src/main/resources/output/accounts.csv.backup&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/resources/output/accounts.csv.backup&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;apdev-example.xml&quot; tooltip=&quot;apdev-example/src/main/mule/apdev-example.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/mule/apdev-example.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;filehandling.xml&quot; tooltip=&quot;filehandling/src/main/mule/filehandling.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/filehandling/src/main/mule/filehandling.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;implementation.xml&quot; tooltip=&quot;apdev-flights-ws/src/main/mule/implementation.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/mule/implementation.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;global.xml&quot; tooltip=&quot;apdev-flights-ws/src/main/mule/global.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/mule/global.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;flights-example.xml&quot; tooltip=&quot;apdev-flights-ws/src/test/resources/flights-example.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/test/resources/flights-example.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;flights-example-1.xml&quot; tooltip=&quot;apdev-flights-ws/src/main/resources/examples/flights-example-1.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/resources/examples/flights-example-1.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;flights-example.xml&quot; tooltip=&quot;apdev-flights-ws/src/main/resources/examples/flights-example.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/resources/examples/flights-example.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.json.ui.JSONEditor&quot; name=&quot;flights-example.json&quot; tooltip=&quot;apdev-flights-ws/src/main/resources/examples/flights-example.json&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/resources/examples/flights-example.json&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Flight.java&quot; tooltip=&quot;apdev-flights-ws/src/main/java/com/mulesoft/training/Flight.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/java/com/mulesoft/training/Flight.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.json.ui.JSONEditor&quot; name=&quot;flights-example.json&quot; tooltip=&quot;apdev-flights-ws/src/test/resources/flights-example.json&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/test/resources/flights-example.json&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;global.xml&quot; tooltip=&quot;apdev-example/src/main/mule/global.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/mule/global.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;test.java&quot; tooltip=&quot;apdev-example/src/main/mule/test.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/mule/test.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;accounts.xml&quot; tooltip=&quot;apdev-example/src/main/mule/accounts.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/mule/accounts.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.raml.editor&quot; name=&quot;config.yaml&quot; tooltip=&quot;apdev-example/src/main/resources/config.yaml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/resources/config.yaml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;accounts.csv.backup&quot; tooltip=&quot;apdev-example/src/main/resources/output/accounts.csv.backup&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/resources/output/accounts.csv.backup&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;apdev-example.xml&quot; tooltip=&quot;apdev-example/src/main/mule/apdev-example.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-example/src/main/mule/apdev-example.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;filehandling.xml&quot; tooltip=&quot;filehandling/src/main/mule/filehandling.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/filehandling/src/main/mule/filehandling.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;implementation.xml&quot; tooltip=&quot;apdev-flights-ws/src/main/mule/implementation.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/mule/implementation.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;global.xml&quot; tooltip=&quot;apdev-flights-ws/src/main/mule/global.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/mule/global.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;flights-example.xml&quot; tooltip=&quot;apdev-flights-ws/src/test/resources/flights-example.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/test/resources/flights-example.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;flights-example-1.xml&quot; tooltip=&quot;apdev-flights-ws/src/main/resources/examples/flights-example-1.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/resources/examples/flights-example-1.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;flights-example.xml&quot; tooltip=&quot;apdev-flights-ws/src/main/resources/examples/flights-example.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/resources/examples/flights-example.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.json.ui.JSONEditor&quot; name=&quot;flights-example.json&quot; tooltip=&quot;apdev-flights-ws/src/main/resources/examples/flights-example.json&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/resources/examples/flights-example.json&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Flight.java&quot; tooltip=&quot;apdev-flights-ws/src/main/java/com/mulesoft/training/Flight.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/main/java/com/mulesoft/training/Flight.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.json.ui.JSONEditor&quot; name=&quot;flights-example.json&quot; tooltip=&quot;apdev-flights-ws/src/test/resources/flights-example.json&quot;>&#xD;&#xA;&lt;persistable path=&quot;/apdev-flights-ws/src/test/resources/flights-example.json&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_D9YiUaMAEemhILOlKrLVKg" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.ui.workbench" selectedElement="_D9YiUqMAEemhILOlKrLVKg" x="0" y="0" width="1024" height="768">
@@ -146,9 +146,10 @@
           <tags>persp.newWizSC:org.eclipse.ui.wizards.new.file</tags>
           <tags>persp.newWizSC:org.eclipse.ui.editors.wizards.UntitledTextFileWizard</tags>
           <tags>persp.newWizSC:org.mule.tooling.ui.contribution.munit.wizards.NewTestWizard</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_D9YiaqMAEemhILOlKrLVKg" selectedElement="_D9Yid6MAEemhILOlKrLVKg" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_D9YiaqMAEemhILOlKrLVKg" selectedElement="_D9Yia6MAEemhILOlKrLVKg" horizontal="true">
             <children xsi:type="basic:PartSashContainer" xmi:id="_D9Yia6MAEemhILOlKrLVKg" containerData="2000" selectedElement="_D9YibKMAEemhILOlKrLVKg">
               <children xsi:type="basic:PartStack" xmi:id="_D9YibKMAEemhILOlKrLVKg" elementId="left" containerData="5500" selectedElement="_D9YibaMAEemhILOlKrLVKg">
+                <tags>active</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_D9YibaMAEemhILOlKrLVKg" elementId="org.eclipse.jdt.ui.PackageExplorer" ref="_D9YkcaMAEemhILOlKrLVKg"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_D9YibqMAEemhILOlKrLVKg" elementId="org.eclipse.ui.navigator.ProjectExplorer" toBeRendered="false" ref="_D9Yk0KMAEemhILOlKrLVKg"/>
               </children>
@@ -190,123 +191,9 @@
       </children>
     </children>
     <sharedElements xsi:type="advanced:Area" xmi:id="_D9YjrKMAEemhILOlKrLVKg" elementId="org.eclipse.ui.editorss" selectedElement="_D9YjraMAEemhILOlKrLVKg">
-      <children xsi:type="basic:PartStack" xmi:id="_D9YjraMAEemhILOlKrLVKg" elementId="PartStack@346f41a9" selectedElement="_D9YjrqMAEemhILOlKrLVKg">
-        <tags>active</tags>
+      <children xsi:type="basic:PartStack" xmi:id="_D9YjraMAEemhILOlKrLVKg" elementId="PartStack@346f41a9">
         <tags>noFocus</tags>
-        <children xsi:type="basic:Part" xmi:id="_D9YjrqMAEemhILOlKrLVKg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="accounts" iconURI="platform:/plugin/org.mule.tooling.images/images/obj/mule.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;accounts.xml&quot; partName=&quot;accounts&quot; title=&quot;accounts&quot; tooltip=&quot;apdev-example/src/main/mule/accounts.xml&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/apdev-example/src/main/mule/accounts.xml&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.mule.tooling.messageflow.messageFlowEditor</tags>
-          <tags>removeOnHide</tags>
-          <tags>activeOnClose</tags>
-          <tags>active</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9Yjr6MAEemhILOlKrLVKg" elementId="org.mule.tooling.messageflow.xmlConfig.contentType.source.EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:org.mule.tooling.messageflow.xmlConfig.contentType.source.EditorContext</tags>
-            <tags>popup:org.eclipse.core.runtime.xml.source.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9YjsKMAEemhILOlKrLVKg" elementId="org.mule.tooling.messageflow.xmlConfig.contentType.source.RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:org.mule.tooling.messageflow.xmlConfig.contentType.source.RulerContext</tags>
-            <tags>popup:org.eclipse.core.runtime.xml.source.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9YjsaMAEemhILOlKrLVKg" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9YjsqMAEemhILOlKrLVKg" elementId="org.mule.tooling.messageflow.xmlConfig.contentType.source.EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:org.mule.tooling.messageflow.xmlConfig.contentType.source.EditorContext</tags>
-            <tags>popup:org.eclipse.core.runtime.xml.source.source.EditorContext</tags>
-            <tags>popup:org.eclipse.wst.sse.ui.StructuredTextEditor.EditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9Yjs6MAEemhILOlKrLVKg" elementId="org.mule.tooling.messageflow.xmlConfig.contentType.source.RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:org.mule.tooling.messageflow.xmlConfig.contentType.source.RulerContext</tags>
-            <tags>popup:org.eclipse.core.runtime.xml.source.source.RulerContext</tags>
-            <tags>popup:org.eclipse.wst.sse.ui.StructuredTextEditor.RulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_D9YjtKMAEemhILOlKrLVKg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="global" iconURI="platform:/plugin/org.mule.tooling.images/images/obj/mule.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.mule.tooling.messageflow.messageFlowEditor&quot; name=&quot;global.xml&quot; partName=&quot;global&quot; title=&quot;global&quot; tooltip=&quot;apdev-example/src/main/mule/global.xml&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/apdev-example/src/main/mule/global.xml&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.mule.tooling.messageflow.messageFlowEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9YjtaMAEemhILOlKrLVKg" elementId="org.mule.tooling.messageflow.xmlConfig.contentType.source.EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:org.mule.tooling.messageflow.xmlConfig.contentType.source.EditorContext</tags>
-            <tags>popup:org.eclipse.core.runtime.xml.source.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9YjtqMAEemhILOlKrLVKg" elementId="org.mule.tooling.messageflow.xmlConfig.contentType.source.RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:org.mule.tooling.messageflow.xmlConfig.contentType.source.RulerContext</tags>
-            <tags>popup:org.eclipse.core.runtime.xml.source.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9Yjt6MAEemhILOlKrLVKg" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9YjuKMAEemhILOlKrLVKg" elementId="org.mule.tooling.messageflow.xmlConfig.contentType.source.EditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:org.mule.tooling.messageflow.xmlConfig.contentType.source.EditorContext</tags>
-            <tags>popup:org.eclipse.core.runtime.xml.source.source.EditorContext</tags>
-            <tags>popup:org.eclipse.wst.sse.ui.StructuredTextEditor.EditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9YjuaMAEemhILOlKrLVKg" elementId="org.mule.tooling.messageflow.xmlConfig.contentType.source.RulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:org.mule.tooling.messageflow.xmlConfig.contentType.source.RulerContext</tags>
-            <tags>popup:org.eclipse.core.runtime.xml.source.source.RulerContext</tags>
-            <tags>popup:org.eclipse.wst.sse.ui.StructuredTextEditor.RulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_D9YjuqMAEemhILOlKrLVKg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="config.yaml" iconURI="platform:/plugin/org.raml.editor/icons/RAML.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.raml.editor&quot; name=&quot;config.yaml&quot; partName=&quot;config.yaml&quot; title=&quot;config.yaml&quot; tooltip=&quot;apdev-example/src/main/resources/config.yaml&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/apdev-example/src/main/resources/config.yaml&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;124&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.raml.editor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9Yju6MAEemhILOlKrLVKg" elementId="#TextEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextEditorContext</tags>
-            <tags>popup:org.raml.editor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9Yj1KMAEemhILOlKrLVKg" elementId="#TextRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#TextRulerContext</tags>
-            <tags>popup:org.raml.editor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9Yj1aMAEemhILOlKrLVKg" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
-        <children xsi:type="basic:Part" xmi:id="_D9Yj1qMAEemhILOlKrLVKg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="test.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;test.java&quot; partName=&quot;test.java&quot; title=&quot;test.java&quot; tooltip=&quot;apdev-example/src/main/mule/test.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/apdev-example/src/main/mule/test.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;887&quot; selectionTopPixel=&quot;27&quot;/>&#xD;&#xA;&lt;/editor>"/>
-          <tags>Editor</tags>
-          <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
-          <tags>removeOnHide</tags>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9Yj16MAEemhILOlKrLVKg" elementId="#CompilationUnitEditorContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CompilationUnitEditorContext</tags>
-            <tags>popup:org.eclipse.jdt.ui.CompilationUnitEditor.EditorContext</tags>
-            <tags>popup:#AbstractTextEditorContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9YkI6MAEemhILOlKrLVKg" elementId="#CompilationUnitRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#CompilationUnitRulerContext</tags>
-            <tags>popup:org.eclipse.jdt.ui.CompilationUnitEditor.RulerContext</tags>
-            <tags>popup:#AbstractTextEditorRulerContext</tags>
-          </menus>
-          <menus xsi:type="menu:PopupMenu" xmi:id="_D9YkJKMAEemhILOlKrLVKg" elementId="#OverviewRulerContext">
-            <tags>menuContribution:popup</tags>
-            <tags>popup:#OverviewRulerContext</tags>
-          </menus>
-        </children>
+        <tags>empty</tags>
       </children>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_D9YkJaMAEemhILOlKrLVKg" elementId="org.mule.tooling.ui.contribution.debugger.view" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Mule Debugger" iconURI="platform:/plugin/org.mule.tooling.ui.contribution.debugger/icons/small/debug_view-16x16.gif" tooltip="" closeable="true">
@@ -488,6 +375,7 @@
       <tags>View</tags>
       <tags>categoryTag:Java</tags>
       <tags>activeOnClose</tags>
+      <tags>active</tags>
       <menus xmi:id="_D9YkcqMAEemhILOlKrLVKg" elementId="org.eclipse.jdt.ui.PackageExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -556,43 +444,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_D9Yk5qMAEemhILOlKrLVKg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk56MAEemhILOlKrLVKg" elementId="new.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk6KMAEemhILOlKrLVKg" elementId="newWizardDropDown">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk6aMAEemhILOlKrLVKg" elementId="new.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk6qMAEemhILOlKrLVKg" elementId="save.group" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_D9Yk66MAEemhILOlKrLVKg" elementId="org.mule.tooling.templatesrepository.commands.openrepositorytoolbar" iconURI="platform:/plugin/org.mule.tooling.templatesrepo/icons/exchange-icon.png" tooltip="Open Exchange" command="_D9YsPqMAEemhILOlKrLVKg">
-          <persistedState key="IIdentifier" value="org.mule.tooling.templatesrepo/org.mule.tooling.templatesrepository.commands.openrepositorytoolbar"/>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk7KMAEemhILOlKrLVKg" elementId="save">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk7aMAEemhILOlKrLVKg" elementId="saveAll">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk7qMAEemhILOlKrLVKg" elementId="save.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_D9Yk76MAEemhILOlKrLVKg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_D9YsWaMAEemhILOlKrLVKg"/>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk8KMAEemhILOlKrLVKg" elementId="print.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk8aMAEemhILOlKrLVKg" elementId="build.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk8qMAEemhILOlKrLVKg" elementId="build.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9Yk86MAEemhILOlKrLVKg" elementId="additions">
-          <tags>Opaque</tags>
-        </children>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_i2wW0Ka8EempWty0VUkGpA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_D9YsWaMAEemhILOlKrLVKg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_D9Yk9KMAEemhILOlKrLVKg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -600,69 +452,15 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_D9YlHKMAEemhILOlKrLVKg" elementId="org.eclipse.ui.edit.text.actionSet.presentation" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlHaMAEemhILOlKrLVKg" elementId="Presentation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlHqMAEemhILOlKrLVKg" elementId="org.eclipse.jdt.ui.edit.text.java.toggleBreadcrumb">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlH6MAEemhILOlKrLVKg" elementId="org.eclipse.jdt.ui.edit.text.java.toggleMarkOccurrences">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlIKMAEemhILOlKrLVKg" elementId="org.eclipse.ui.edit.text.toggleWordWrap">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlIaMAEemhILOlKrLVKg" elementId="org.eclipse.ui.edit.text.toggleBlockSelectionMode">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlIqMAEemhILOlKrLVKg" elementId="org.eclipse.ui.edit.text.toggleShowWhitespaceCharacters">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlI6MAEemhILOlKrLVKg" elementId="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly" visible="false">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_D9YlJKMAEemhILOlKrLVKg" elementId="org.eclipse.debug.ui.launchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlJaMAEemhILOlKrLVKg" elementId="debug">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlJqMAEemhILOlKrLVKg" elementId="org.eclipse.debug.internal.ui.actions.DebugDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlJ6MAEemhILOlKrLVKg" elementId="org.eclipse.debug.internal.ui.actions.RunDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlKKMAEemhILOlKrLVKg" elementId="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar" visible="false">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_D9YlKaMAEemhILOlKrLVKg" elementId="org.eclipse.jdt.ui.JavaElementCreationActionSet" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlKqMAEemhILOlKrLVKg" elementId="JavaWizards">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlK6MAEemhILOlKrLVKg" elementId="org.eclipse.jdt.ui.actions.OpenProjectWizard" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlLKMAEemhILOlKrLVKg" elementId="org.eclipse.jdt.ui.actions.OpenPackageWizard">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlLaMAEemhILOlKrLVKg" elementId="org.eclipse.jdt.ui.actions.NewTypeDropDown">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_D9YlLqMAEemhILOlKrLVKg" elementId="org.eclipse.search.searchActionSet" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlL6MAEemhILOlKrLVKg" elementId="Search">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlMKMAEemhILOlKrLVKg" elementId="openType" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlMaMAEemhILOlKrLVKg" elementId="org.eclipse.search.OpenSearchDialogPage" visible="false">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_D9YlMqMAEemhILOlKrLVKg" elementId="group.nav" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -670,55 +468,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_D9YlNKMAEemhILOlKrLVKg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlNaMAEemhILOlKrLVKg" elementId="history.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlNqMAEemhILOlKrLVKg" elementId="group.application" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlN6MAEemhILOlKrLVKg" elementId="backardHistory">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlOKMAEemhILOlKrLVKg" elementId="forwardHistory">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlOaMAEemhILOlKrLVKg" elementId="pin.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_D9YlOqMAEemhILOlKrLVKg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_D9YryqMAEemhILOlKrLVKg"/>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlO6MAEemhILOlKrLVKg" elementId="org.eclipse.ui.edit.text.gotoNextAnnotation" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlPKMAEemhILOlKrLVKg" elementId="org.eclipse.ui.edit.text.gotoPreviousAnnotation" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlPaMAEemhILOlKrLVKg" elementId="org.eclipse.ui.edit.text.gotoLastEditPosition" visible="false">
-          <tags>Opaque</tags>
-        </children>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_D9YlPqMAEemhILOlKrLVKg" elementId="org.mule.tooling.messageflow.messageFlowEditor">
-        <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlP6MAEemhILOlKrLVKg">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlQKMAEemhILOlKrLVKg" elementId="undo">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlQaMAEemhILOlKrLVKg" elementId="redo">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlQqMAEemhILOlKrLVKg" elementId="delete">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlQ6MAEemhILOlKrLVKg" elementId="org.mule.tooling.messageflow.editor.collapseAll">
-          <tags>Opaque</tags>
-        </children>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_D9YlRKMAEemhILOlKrLVKg" elementId="org.raml.editor" visible="false">
-        <tags>Draggable</tags>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_D9YlRaMAEemhILOlKrLVKg" elementId="org.eclipse.jdt.ui.CompilationUnitEditor" visible="false">
-        <tags>Draggable</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_i2wW2qa8EempWty0VUkGpA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_D9YryqMAEemhILOlKrLVKg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_D9YlRqMAEemhILOlKrLVKg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -730,12 +480,6 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_D9YlSqMAEemhILOlKrLVKg" elementId="org.eclipse.ui.workbench.help" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlS6MAEemhILOlKrLVKg" elementId="group.help">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_D9YlTKMAEemhILOlKrLVKg" elementId="group.application" visible="false">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_D9YlTaMAEemhILOlKrLVKg" elementId="PerspectiveSpacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>
@@ -758,8 +502,30 @@
         <tags>Draggable</tags>
       </children>
     </trimBars>
-    <trimBars xmi:id="_D9YlVqMAEemhILOlKrLVKg" elementId="org.eclipse.ui.trim.vertical1" contributorURI="platform:/plugin/org.eclipse.ui.workbench" toBeRendered="false" side="Left"/>
-    <trimBars xmi:id="_D9YlV6MAEemhILOlKrLVKg" elementId="org.eclipse.ui.trim.vertical2" contributorURI="platform:/plugin/org.eclipse.ui.workbench" toBeRendered="false" side="Right"/>
+    <trimBars xmi:id="_D9YlVqMAEemhILOlKrLVKg" elementId="org.eclipse.ui.trim.vertical1" contributorURI="platform:/plugin/org.eclipse.ui.workbench" toBeRendered="false" side="Left">
+      <children xsi:type="menu:ToolControl" xmi:id="_yG-f4Kd9EempWty0VUkGpA" elementId="left(IDEWindow).(org.mule.tooling.ui.toolingPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_yJgPcKd9EempWty0VUkGpA" elementId="leftBottom(IDEWindow).(org.mule.tooling.ui.toolingPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_yKGsYKd9EempWty0VUkGpA" elementId="org.eclipse.jdt.munit.ErrorViewMStack(IDEWindow).(org.mule.tooling.ui.toolingPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+    </trimBars>
+    <trimBars xmi:id="_D9YlV6MAEemhILOlKrLVKg" elementId="org.eclipse.ui.trim.vertical2" contributorURI="platform:/plugin/org.eclipse.ui.workbench" toBeRendered="false" side="Right">
+      <children xsi:type="menu:ToolControl" xmi:id="_yKZnUKd9EempWty0VUkGpA" elementId="right(IDEWindow).(org.mule.tooling.ui.toolingPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+      <children xsi:type="menu:ToolControl" xmi:id="_yKsiQKd9EempWty0VUkGpA" elementId="bottom(IDEWindow).(org.mule.tooling.ui.toolingPerspective)" toBeRendered="false" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.TrimStack">
+        <tags>TrimStack</tags>
+        <tags>Draggable</tags>
+      </children>
+    </trimBars>
   </children>
   <bindingTables xmi:id="_D9YlWKMAEemhILOlKrLVKg" contributorURI="platform:/plugin/org.eclipse.ui.workbench" bindingContext="_D9YnR6MAEemhILOlKrLVKg">
     <bindings xmi:id="_D9YlWaMAEemhILOlKrLVKg" keySequence="ALT+F11" command="_D9YrKaMAEemhILOlKrLVKg">
@@ -1801,6 +1567,23 @@
     <tags>View</tags>
     <tags>categoryTag:MuleSoft</tags>
   </descriptors>
+  <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
+    <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:PerspectiveSpacer</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_8tJPcF9tEeO-yojH_y4TJA" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
+      <tags>move_after:Spacer Glue</tags>
+      <tags>HIDEABLE</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_9LgmcF9tEeO-yojH_y4TJA" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:SearchField</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+  </trimContributions>
   <commands xmi:id="_D9YqSaMAEemhILOlKrLVKg" elementId="org.eclipse.jdt.ui.correction.inlineLocal.assist" commandName="Quick Assist - Inline local variable" description="Invokes quick assist and selects 'Inline local variable'" category="_D9YuBKMAEemhILOlKrLVKg"/>
   <commands xmi:id="_D9YqSqMAEemhILOlKrLVKg" elementId="org.mule.tooling.properties.commands.apply" commandName="Apply Properties Command" category="_D9YuCKMAEemhILOlKrLVKg"/>
   <commands xmi:id="_D9YqS6MAEemhILOlKrLVKg" elementId="org.eclipse.wst.jsdt.debug.ui.evaluate.command" commandName="Evaluate" description="Evaluates the selected text in the JavaScript editor" category="_D9Yt8qMAEemhILOlKrLVKg"/>
