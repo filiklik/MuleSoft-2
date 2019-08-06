@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="update_flow" doc:id="89560632-5d50-4655-9505-94db2744de1b" >
+		<http:request method="GET" doc:name="update_flow" doc:id="ca76911d-12a9-4330-800c-da9d73ad225c" url="http://localhost:8088/mockUpdateReservationSoapBinding"/>
+	</flow>
+	<error-handler name="globalError_Handler" doc:id="c1b8d5f6-1e40-4a11-a4c6-69b74a371fc9" >
+		<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="c0467d00-ea10-43c1-9bbc-6490c384df2d" >
+			<flow-ref doc:name="update_ref" doc:id="5a47219f-9806-4578-b837-91c3cc4dbd87" name="update_flow"/>
+			<ee:transform doc:name="Transform Message" doc:id="d394743b-f4ba-465e-ad5f-98b03bc1eb7a" >
+				<ee:message >
+					<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+---
+{
+}]]></ee:set-payload>
+				</ee:message>
+			</ee:transform>
+		</on-error-continue>
+	</error-handler>
+</mule>

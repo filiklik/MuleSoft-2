@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="12c76885-a91c-4de0-b4ec-f4c6cd8868d8" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="fullfillmentFlow" doc:id="9badb4ca-85b6-450f-be7b-22b71bc01477" >
+		<http:listener doc:name="Listener" doc:id="2328d2b0-89a0-411f-a9cb-b9fccbad1b5d" path="/fullfillment" config-ref="HTTP_Listener_config"/>
+		<set-variable value="#[payload]" doc:name="Set Variable" doc:id="7e94de70-75fc-4d53-919e-c33c405c4489" variableName="originalReq"/>
+		<ee:transform doc:name="Transform Message" doc:id="62ecfaf3-a02f-4924-906e-bd40c6c1700f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://schemas.xmlsoap.org/soap/envelope/
+ns ns01 http://webservices.sabre.com/pnrbuilder/v1_18
+---
+{
+	ns0#Envelope: {
+		ns0#Body: {
+			ns01#GetReservationRQ: {
+				ns01#Locator: payload.request.pnr,
+				ns01#RequestType: payload.request.orderDetails.passengerDetails."type",
+				ns01#ReturnOptions: {
+					ns01#ViewName: payload.request.orderDetails.passengerDetails.nameNumber,
+					ns01#ResponseFormat: "application/xml"
+				}
+			}
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>

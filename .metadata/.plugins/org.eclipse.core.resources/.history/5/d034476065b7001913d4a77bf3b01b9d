@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="processAPI_requestFlow" doc:id="667d6a4c-943d-487c-88c6-33ecd3556bb3" >
+		<http:listener doc:name="Listener" doc:id="719d2990-242f-46a4-af62-61ef1a80d300" config-ref="HTTP_Listener_config" path="/getReservation"/>
+		<http:request method="GET" doc:name="Request" doc:id="5ab99358-af96-43ee-a74f-ac2fd8115cb1" />
+	</flow>
+</mule>

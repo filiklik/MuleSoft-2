@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="getreservation_flow" doc:id="667d6a4c-943d-487c-88c6-33ecd3556bb3" >
+		<http:request method="POST" doc:name="Request_getReservation" doc:id="5ab99358-af96-43ee-a74f-ac2fd8115cb1" url="http://localhost:8088/mockGetReservationSoapBinding"/>
+		<ee:transform doc:name="Transform Message" doc:id="94fafd42-1dc5-4858-989b-23140f4abf4e" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns stl18 http://webservices.sabre.com/pnrbuilder/v1_18
+ns ns6 http://www.opentravel.org/OTA/2003/05/beta
+ns raw http://tds.sabre.com/itinerary
+ns ns4 http://webservices.sabre.com/pnrconn/ReaccSearch
+ns or112 http://services.sabre.com/res/or/v1_12
+ns soapenv http://schemas.xmlsoap.org/soap/envelope/
+var jsonReq=vars.originalReq.request
+fun getPassenger
+(nameId) =  payload.GetReservationRS.Reservation.PassengerReservation.Passengers.*Passenger filter ((i,j) -> (i.@nameId == nameId))
+fun getPassengerNS
+(nameId) =  payload.stl18#GetReservationRS.stl18#Reservation.stl18#PassengerReservation.stl18#Passengers.*stl18#Passenger filter ((i,j) -> (i.@nameId == nameId)) 
+ 
+fun getPassengerReferenceNumNS (nameId) = getPassengerNS(nameId).@referenceNumber[0]
+fun getAncillaryService (id) = getAncillaryServiceNS(id)
+fun getAncillaryServiceNS
+(id)= payload.stl18#GetReservationRS.stl18#Reservation.stl18#PassengerReservation.stl18#Passengers.*stl18#Passenger.stl18#AncillaryServices.stl18#AncillaryService filter ((i,j) -> (i.@id == id))
+---
+{
+	soapenv#Envelope: {
+		soapenv#Body: {
+			ns6#PaymentRQ @(
+		"SystemDateTime":jsonReq.pos.localDateTime,
+		"Version":"3.0.0"
+	): {
+				ns6#Action: "OrchPayment",
+				ns6#POS 
+		@("PseudoCityCode": payload.GetReservationRS.Reservation.POS.Source.@PseudoCityCode,
+			"AgentSine": jsonReq.pos.sine,
+			"LNIATA": jsonReq.pos.lniata,
+			"StationNumber": jsonReq.pos.aaa.number,
+			"ISOCountry": jsonReq.pos.aaa.country,
+			"ChannelID": jsonReq.pos.channel,
+			"LocalDateTime": jsonReq.pos.localDateTime,
+			"SourceID": jsonReq.pos.source
+		): {
+				},
+				ns6#MerchantDetail @("MerchantID": jsonReq.pos.company): {
+				},
+				ns6#OrderDetail @("RecordLocator": jsonReq.pnr) : {
+					(jsonReq.orderDetails.passengerDetails map (item,index) -> {
+						ns6#PassengerDetail @(
+					"NameNumberInPNR": item.nameNumber,
+					"PsgrType": getPassenger(item.nameNumber).@referenceNumber[0]): {
+							(jsonReq.ticketingData.emd.emdDocuments map (emdDocuments, docIndex) -> {
+								(ns6#Document @("DocType":"EMD",
+										"DocCurrency": getPassenger(item.nameNumber).AncillaryServices.AncillaryService.TotalTTLPrice.Currency[0],
+										"DocAmount":getPassenger(item.nameNumber).AncillaryServices.AncillaryService.TotalTTLPrice.Price[0],
+										"AssociatedDocNumber":emdDocuments.documentAssociation[0].ticketNumber
+						): {
+								}
+						) if (getPassenger(item.nameNumber).AncillaryServices.AncillaryService.@id[0] == emdDocuments.aeItemId)
+							})
+						}
+					})
+				},
+				ns6#PaymentDetail: jsonReq.paymentData.payments map ((item, index) -> {
+					ns6#FOP @("Type":"CC", "FOP_Code":item.cardCode): {
+					},
+					ns6#PaymentCard @(
+				"CardCode":item.cardCode,
+				"CardNumber":item.cardNumber,
+				"CardSecurityCode":item.cardSecurityCode,
+				"ExpireDate":item.expirationDate): {
+						ns6#CardHolderName @(
+						"FirstName":item.cardHolder.firstName,
+						"LastName":item.cardHolder.lastName
+					): {
+						}
+					},
+					ns6#AmountDetail @(
+					"Amount":item.details.amount.value,
+					"CurrencyCode":item.details.amount.currency
+				): {
+					}
+				})
+			}
+		}
+	}
+}
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="9d9e0198-ee5f-434e-8752-ea19d8c66305" />
+	</flow>
+	<flow name="payment_flow" doc:id="3a5d796a-287c-4dda-b4eb-5ae38c1cf256" >
+		<http:request method="POST" doc:name="Request_paymentService" doc:id="d6706b16-510a-44fc-9bcc-921a5b1a7d3e" url="http://localhost:8088/mockPaymentServiceSoapBinding"/>
+		<ee:transform doc:name="Transform Message" doc:id="8f5c35b6-511a-42b2-b1fa-85595cb63cd5" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml inlineCloseOn="empty"	
+ns ns2 http://www.sabre.com/ns/Ticketing/misc/1.0
+ns ns1 http://services.sabre.com/STL/v01
+ns stl16 http://webservices.sabre.com/pnrbuilder/v1_16
+ns soapenv http://schemas.xmlsoap.org/soap/envelope/
+
+var jsonReq=vars.originalReq.request
+
+fun getPassenger (nameId) =  (getPassengerNS(nameId).LastName)[0]
+
+fun getPassengerNS
+(nameId) =  payload.GetReservationRS.Reservation.PassengerReservation.Passengers.*Passenger filter ((i,j) -> (i.@nameId == nameId)) 
+
+---
+{
+soapenv#Envelope:
+{
+ soapenv#Body:{
+	ns2#CollectMiscFeeRQ @(
+		"version":"1.4.1"
+	): {
+		ns1#AgentPOS @(
+			"company":vars.originalReq.request.pos.company,
+			"lniata":vars.originalReq.request.pos.lniata,
+			"sine":vars.originalReq.request.pos.sine
+		):{
+			ns1#AAA:"ERF"
+		},
+		ns1#Transaction @("code":"EMD"):{},
+		ns1#Parameters:{
+			ns1#PrinterLniata: "*ETKT*"
+		},
+		(jsonReq.orderDetails.passengerDetails map (item, index) -> {
+			ns1#Fees: {
+			ns1#Linked:{
+				ns1#Customer @(
+					"lastName":getPassengerNS(item.nameNumber).LastName[0],
+					"firstName": getPassengerNS(item.nameNumber).FirstName[0]
+				):{
+					ns1#CustomerDetails @(
+						"nameRefNumber":item.nameNumber,
+						"pnrLocator":vars.originalReq.request.pnr
+					):{}
+				},
+				ns1#Fee :{
+					(jsonReq.ticketingData.emd.emdDocuments map (emdDoc , docIndex) -> {						
+						(ns1#FeeDetails @(
+							"code":getPassengerNS(item.nameNumber).AncillaryServices.AncillaryService.RficSubcode[0],
+							"quantity":1
+						): {
+							ns1#Base @(
+								"currencyCode":getPassengerNS(item.nameNumber).AncillaryServices.AncillaryService.TTLPrice.Currency[0],
+								"currency":getPassengerNS(item.nameNumber).AncillaryServices.AncillaryService.TTLPrice.Currency[0]
+							):getPassengerNS(item.nameNumber).AncillaryServices.AncillaryService.TTLPrice.Price[0],
+							ns1#TotalTax @(
+								"currencyCode":getPassengerNS(item.nameNumber).AncillaryServices.AncillaryService.TTLPrice.Currency[0],
+								"currency":getPassengerNS(item.nameNumber).AncillaryServices.AncillaryService.TTLPrice.Currency[0]
+							):0,
+							ns1#Total @(
+								"currencyCode":getPassengerNS(item.nameNumber).AncillaryServices.AncillaryService.TTLPrice.Currency[0],
+								"currency":getPassengerNS(item.nameNumber).AncillaryServices.AncillaryService.TTLPrice.Currency[0]
+							): getPassengerNS(item.nameNumber).AncillaryServices.AncillaryService.TTLPrice.Price[0],							
+						}) if(emdDoc.aeItemId == getPassengerNS(item.nameNumber).AncillaryServices.AncillaryService.@id[0])
+					})
+				}
+			}
+		}
+	}),
+		ns1#TotalCost @(
+			"currencyCode":jsonReq.paymentData.payments[0].details.amount.currency,
+			"currency":jsonReq.paymentData.payments[0].details.amount.currency
+		):vars.originalReq.request.paymentData.payments[0].details.amount.value,
+		ns1#Payment :{
+			ns1#Amount @(
+				"currencyCode":jsonReq.paymentData.payments[0].details.amount.currency,
+			"currency":jsonReq.paymentData.payments[0].details.amount.currency
+			):vars.originalReq.request.paymentData.payments[0].details.amount.value,
+			ns1#FormOfPayment:{
+				ns1#CreditCard @("transactionID":payload.PaymentRS.Results[0].AuthorizationResult.@SupplierTransID):{
+					ns1#Code:jsonReq.paymentData.payments[0].cardCode,
+					ns1#Number:jsonReq.paymentData.payments[0].cardNumber,
+					ns1#ExpiryDate: (jsonReq.paymentData.payments[0].expirationDate)[5 to 6] ++ (jsonReq.paymentData.payments[0].expirationDate)[2 to 3] ,
+					ns1#SecurityCode:jsonReq.paymentData.payments[0].cardSecurityCode,
+					ns1#ApprovalCode:payload.PaymentRS.Results[0].AuthorizationResult.@ApprovalCode
+				}
+			}
+		},
+		ns1#DetailLevel:"Full"
+		}
+}}}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="miscfee_flow" doc:id="ddce7a6b-93c7-48d7-8817-3c73ae85dff6" >
+		<http:request method="POST" doc:name="Request_miscfeecoll" doc:id="4fdebfd0-7bb2-4739-bb70-1f44e5831771" url="http://localhost:8088/mockCollectMiscFeeSoapBinding"/>
+	</flow>
+	<flow name="fraud_flow" doc:id="5f7e8118-38e6-47ca-9f43-539449c84216" >
+		<http:request method="POST" doc:name="Request_fraudCheck" doc:id="f47dc609-2a49-4d61-af16-195f504635a5" url="http://localhost:8088/mockFraudCheckServiceSoapBinding"/>
+	</flow>
+</mule>

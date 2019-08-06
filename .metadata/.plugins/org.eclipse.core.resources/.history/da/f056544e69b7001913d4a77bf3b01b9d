@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config1" doc:name="HTTP Listener config" doc:id="f7bf1a2c-b218-4157-a424-1d2195bc9aa9" >
+		<http:listener-connection host="0.0.0.0" port="8083" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="69097228-86af-4b2e-8ca0-46c4fb843585" >
+		<http:request-connection host="localhost" port="8088" />
+	</http:request-config>
+	<configuration doc:name="Configuration" doc:id="7770124a-124d-4ce1-b32a-03c229397389" defaultErrorHandler-ref="globalError_Handler" />
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="930f3840-99b8-40eb-8701-f0cf9fd00401" >
+		<http:listener-connection host="0.0.0.0" port="8082" />
+	</http:listener-config>
+	<flow name="update_flow" doc:id="23cbd70b-0bda-41b8-8447-6e2577d0a9fe" >
+		<http:request method="PUT" doc:name="Request" doc:id="36d27693-512f-4184-8926-697508534665" url="http://localhost:8088/mockUpdateReservationSoapBinding"/>
+	</flow>
+
+</mule>

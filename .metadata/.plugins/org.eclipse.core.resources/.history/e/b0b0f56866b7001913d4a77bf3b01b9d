@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="processAPI_requestFlow" doc:id="667d6a4c-943d-487c-88c6-33ecd3556bb3" >
+		<http:listener doc:name="Listener" doc:id="719d2990-242f-46a4-af62-61ef1a80d300" config-ref="HTTP_Listener_config" path="/getReservation"/>
+		<http:request method="POST" doc:name="Request_getReservation" doc:id="5ab99358-af96-43ee-a74f-ac2fd8115cb1" url="http://localhost:8088/mockGetReservationSoapBinding"/>
+	</flow>
+	<flow name="processAPI_requestFlow1" doc:id="3a5d796a-287c-4dda-b4eb-5ae38c1cf256" >
+		<http:listener doc:name="Listener" doc:id="073038e5-5f0d-4809-8674-d95e07d096ea" config-ref="HTTP_Listener_config" path="/payment" allowedMethods="POST"/>
+		<http:request method="POST" doc:name="Request_paymentService" doc:id="d6706b16-510a-44fc-9bcc-921a5b1a7d3e" url="http://localhost:8088/mockPaymentServiceSoapBinding"/>
+	</flow>
+	<flow name="processAPI_requestFlow2" doc:id="5f7e8118-38e6-47ca-9f43-539449c84216" >
+		<http:listener doc:name="Listener" doc:id="c1a04d80-c6b8-40a0-bf56-385b4987d58b" config-ref="HTTP_Listener_config" path="/fraud-check" allowedMethods="POST"/>
+		<http:request method="POST" doc:name="Request_fraudCheck" doc:id="f47dc609-2a49-4d61-af16-195f504635a5" url="http://localhost:8088/mockFraudCheckServiceSoapBinding"/>
+	</flow>
+</mule>

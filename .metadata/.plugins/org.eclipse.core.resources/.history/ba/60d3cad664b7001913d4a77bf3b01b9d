@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6a3138ca-b101-4771-9cf9-313f46afd1d9" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="fullfillmentFlow" doc:id="b8f3fa90-31ae-43d4-83a7-f63d97db0a7e" initialState="stopped">
+		<http:listener doc:name="Listener" doc:id="89e9545d-8f33-4a49-977b-54b350753604" config-ref="HTTP_Listener_config" path="/fullfillment" allowedMethods="POST"/>
+		<set-variable value="#[payload]" doc:name="Set Variable" doc:id="f9671cff-0f3a-460f-a60a-9ea7a6953a16" variableName="originalReq"/>
+		<ee:transform doc:name="jsonTOxml" doc:id="0ac0962c-31c5-4c31-bfba-31cf6d8559b5" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://schemas.xmlsoap.org/soap/envelope/
+ns ns01 http://webservices.sabre.com/pnrbuilder/v1_18
+---
+{
+	ns0#Envelope: {
+		ns0#Body: {
+			ns01#GetReservationRQ: {
+				ns01#Locator: payload.request.pnr,
+				ns01#RequestType: payload.request.orderDetails.passengerDetails."type",
+				ns01#ReturnOptions: {
+					ns01#ViewName: payload.request.orderDetails.passengerDetails.nameNumber,
+					ns01#ResponseFormat: "application/xml"
+				}
+			}
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<flow-ref doc:name="get-reservation" doc:id="7d5bd266-9e04-462e-971b-5df22af92214" name="get-reservation"/>
+		<ee:transform doc:name="Transform Message" doc:id="63d65441-3f23-4b04-bcfa-80909ba01255" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns stl18 http://webservices.sabre.com/pnrbuilder/v1_18
+ns ns6 http://www.opentravel.org/OTA/2003/05/beta
+ns raw http://tds.sabre.com/itinerary
+ns ns4 http://webservices.sabre.com/pnrconn/ReaccSearch
+ns or112 http://services.sabre.com/res/or/v1_12
+ns soapenv http://schemas.xmlsoap.org/soap/envelope/
+
+
+var jsonReq=vars.originalReq.request
+
+fun getPassenger
+(nameId) =  payload.GetReservationRS.Reservation.PassengerReservation.Passengers.*Passenger filter ((i,j) -> (i.@nameId == nameId))
+fun getPassengerNS
+(nameId) =  payload.stl18#GetReservationRS.stl18#Reservation.stl18#PassengerReservation.stl18#Passengers.*stl18#Passenger filter ((i,j) -> (i.@nameId == nameId)) 
+ 
+fun getPassengerReferenceNumNS (nameId) = getPassengerNS(nameId).@referenceNumber[0]
+
+fun getAncillaryService (id) = getAncillaryServiceNS(id)
+
+fun getAncillaryServiceNS
+(id)= payload.stl18#GetReservationRS.stl18#Reservation.stl18#PassengerReservation.stl18#Passengers.*stl18#Passenger.stl18#AncillaryServices.stl18#AncillaryService filter ((i,j) -> (i.@id == id))
+---
+{
+	soapenv#Envelope:
+{
+ soapenv#Body:{
+	ns6#PaymentRQ @(
+		"SystemDateTime":jsonReq.pos.localDateTime,
+		"Version":"3.0.0"
+	): {
+		ns6#Action:"OrchPayment", 
+		ns6#POS 
+		@("PseudoCityCode": payload.GetReservationRS.Reservation.POS.Source.@PseudoCityCode,
+			"AgentSine": jsonReq.pos.sine,
+			"LNIATA": jsonReq.pos.lniata,
+			"StationNumber": jsonReq.pos.aaa.number,
+			"ISOCountry": jsonReq.pos.aaa.country,
+			"ChannelID": jsonReq.pos.channel,
+			"LocalDateTime": jsonReq.pos.localDateTime,
+			"SourceID": jsonReq.pos.source
+		):{},
+		ns6#MerchantDetail @("MerchantID": jsonReq.pos.company):{},
+		ns6#OrderDetail @("RecordLocator": jsonReq.pnr) : {
+			(jsonReq.orderDetails.passengerDetails map (item,index) -> {
+				ns6#PassengerDetail @(
+					"NameNumberInPNR": item.nameNumber,
+					"PsgrType": getPassenger(item.nameNumber).@referenceNumber[0]): {
+						(jsonReq.ticketingData.emd.emdDocuments map (emdDocuments, docIndex) -> {
+							(ns6#Document @("DocType":"EMD",
+										"DocCurrency": getPassenger(item.nameNumber).AncillaryServices.AncillaryService.TotalTTLPrice.Currency[0],
+										"DocAmount":getPassenger(item.nameNumber).AncillaryServices.AncillaryService.TotalTTLPrice.Price[0],
+										"AssociatedDocNumber":emdDocuments.documentAssociation[0].ticketNumber
+						):{}
+						) if (getPassenger(item.nameNumber).AncillaryServices.AncillaryService.@id[0] == emdDocuments.aeItemId) })
+				}
+		})},
+		ns6#PaymentDetail: jsonReq.paymentData.payments map ((item, index) -> {
+			ns6#FOP @("Type":"CC", "FOP_Code":item.cardCode):{},
+			ns6#PaymentCard @(
+				"CardCode":item.cardCode,
+				"CardNumber":item.cardNumber,
+				"CardSecurityCode":item.cardSecurityCode,
+				"ExpireDate":item.expirationDate):{
+					ns6#CardHolderName @(
+						"FirstName":item.cardHolder.firstName,
+						"LastName":item.cardHolder.lastName
+					):{}
+				},
+				ns6#AmountDetail @(
+					"Amount":item.details.amount.value,
+					"CurrencyCode":item.details.amount.currency
+				):{}
+		})
+	}
+}
+ }
+}
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="50dff08c-ffda-4a89-8b76-32689ee7b750" message="#[payload]"/>
+	</flow>
+</mule>

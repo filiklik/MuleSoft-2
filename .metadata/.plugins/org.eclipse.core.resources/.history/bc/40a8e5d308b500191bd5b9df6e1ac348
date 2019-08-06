@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+	<wsc:config name="Web_Service_Consumer_Config" doc:name="Web Service Consumer Config" doc:id="0a489350-4b6b-4af3-9d9b-3e77cadfa020" >
+		<wsc:connection wsdlLocation="wsdl/getReservation/GetReservation_1.18.0.wsdl" service="GetReservationService" port="GetReservationPortType" address="http://usg.sabre.com/websvc" />
+	</wsc:config>
+	<flow name="processAPIFlow" doc:id="c0b32b5b-8bae-4550-a7dd-6c9565655f24" >
+		<wsc:consume doc:name="Consume" doc:id="cbe69a40-f823-4883-9709-3b7c27f79c52" config-ref="Web_Service_Consumer_Config" operation="GetReservationOperation"/>
+	</flow>
+</mule>

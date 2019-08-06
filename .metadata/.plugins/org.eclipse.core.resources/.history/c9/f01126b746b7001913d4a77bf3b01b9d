@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6a3138ca-b101-4771-9cf9-313f46afd1d9" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="fullfillmentFlow" doc:id="aae4f62a-b1b6-4318-b453-1ef8d4d3057b" >
+		<http:listener doc:name="Listener" doc:id="f7cfcb2c-e3f2-47d3-951b-0453037833ed" config-ref="HTTP_Listener_config" path="/fullfillment" allowedMethods="POST"/>
+		<ee:transform doc:name="Transform Message" doc:id="fcd8721c-d747-4474-b155-bdfbb7f0be4b" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://schemas.xmlsoap.org/soap/envelope/
+ns ns01 http://webservices.sabre.com/pnrbuilder/v1_18
+---
+{
+	ns0#Envelope: {
+		ns0#Body: {
+			ns01#GetReservationRQ: {
+				ns01#Locator: payload.request.pnr,
+				ns01#RequestType: payload.request.orderDetails.passengerDetails."type",
+				ns01#ReturnOptions: {
+					ns01#ViewName: payload.request.orderDetails.passengerDetails.nameNumber,
+					ns01#ResponseFormat: "application/xml"
+				}
+			}
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<flow-ref doc:name="Flow Reference" doc:id="0bdd6d12-80c6-4a5d-be5b-e28d5fe1d008" name="get-reservation"/>
+		<logger level="INFO" doc:name="Logger" doc:id="9560b36b-ec98-47cd-b61d-b12c0844b9a0" />
+	</flow>
+</mule>

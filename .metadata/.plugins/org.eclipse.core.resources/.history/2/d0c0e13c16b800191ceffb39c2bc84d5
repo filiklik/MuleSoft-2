@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<configuration doc:name="Configuration" doc:id="326554ae-2c59-4230-b498-e5e64a955c86" defaultErrorHandler-ref="globalError_Handler" />
+	<flow name="getreservation_flow" doc:id="667d6a4c-943d-487c-88c6-33ecd3556bb3" >
+		<http:request method="POST" doc:name="Request_getReservation" doc:id="5ab99358-af96-43ee-a74f-ac2fd8115cb1" url="http://localhost:8088/mockGetReservationSoapBinding"/>
+	</flow>
+	<flow name="payment_flow" doc:id="3a5d796a-287c-4dda-b4eb-5ae38c1cf256" >
+		<http:request method="POST" doc:name="Request_paymentService" doc:id="d6706b16-510a-44fc-9bcc-921a5b1a7d3e" url="http://localhost:8088/mockPaymentServiceSoapBinding"/>
+	</flow>
+	<flow name="miscfee_flow" doc:id="ddce7a6b-93c7-48d7-8817-3c73ae85dff6" >
+		<http:request method="POST" doc:name="Request_miscfeecoll" doc:id="4fdebfd0-7bb2-4739-bb70-1f44e5831771" url="http://localhost:8088/mockCollectMiscFeeSoapBinding"/>
+	</flow>
+	<flow name="fraud_flow" doc:id="5f7e8118-38e6-47ca-9f43-539449c84216" >
+		<http:request method="POST" doc:name="Request_fraudCheck" doc:id="f47dc609-2a49-4d61-af16-195f504635a5" url="http://localhost:8088/mockFraudCheckServiceSoapBinding"/>
+	</flow>
+	<flow name="update_flow" doc:id="126ea4bf-a19d-4e2d-8c7c-84e76d9f725e" >
+		<http:request method="GET" doc:name="Request_update" doc:id="f73625b6-ef58-4197-8864-286a4136f99f" url="http://localhost:8088/mockUpdateReservationSoapBinding"/>
+	</flow>
+</mule>

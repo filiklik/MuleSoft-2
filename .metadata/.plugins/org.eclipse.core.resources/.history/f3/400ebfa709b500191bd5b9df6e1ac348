@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+	<wsc:config name="GetReservationService_Config" doc:name="Web Service Consumer Config" doc:id="0a489350-4b6b-4af3-9d9b-3e77cadfa020" >
+		<wsc:connection wsdlLocation="wsdl/getReservation/GetReservation_1.18.0.wsdl" service="GetReservationService" port="GetReservationPortType" address="http://usg.sabre.com/websvc" />
+	</wsc:config>
+	<wsc:config name="GetReservationRQ_config" doc:name="Web Service Consumer Config" doc:id="0eead1a6-e621-41ba-9783-7d81f5b405e7" >
+		<wsc:connection wsdlLocation="wsdl/payment/PaymentRQ_v4.13.0.wsdl" service="PaymentServiceService" port="PaymentServicePortType" address="https://webservices.sabre.com" />
+	</wsc:config>
+	<flow name="get-reservation" doc:id="c0b32b5b-8bae-4550-a7dd-6c9565655f24" >
+		<wsc:consume doc:name="Consume" doc:id="cbe69a40-f823-4883-9709-3b7c27f79c52" config-ref="GetReservationService_Config" operation="GetReservationOperation"/>
+	</flow>
+	<flow name="processAPIFlow" doc:id="31a99c7f-66cf-449d-87b9-1593d87fe943" >
+		<wsc:consume doc:name="Consume" doc:id="99094930-e57f-4552-89e8-a4f3808346ed" config-ref="GetReservationRQ_config" operation="PaymentServiceRQ"/>
+	</flow>
+</mule>
