@@ -6531,3 +6531,70 @@ Binding(CTRL+SHIFT+I,
 
 !ENTRY org.mule.tooling.runtime 1 0 2019-08-06 15:25:11.597
 !MESSAGE Finished shell termination command "[taskkill, /F, /PID, 4996]"
+
+!ENTRY org.mule.tooling.maven 1 0 2019-08-06 15:39:42.521
+!MESSAGE  *** 19015 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.mule.tooling.maven 1 0 2019-08-06 15:43:44.124
+!MESSAGE  *** 10263 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.mule.tooling.maven 1 0 2019-08-06 15:54:01.272
+!MESSAGE  *** 29163 EmbeddedMavenRunner [configuration=MavenPreferences [isDontWarnAgainIfNoInstallationFoundChecked()=false, isGlobalMavenSupportEnabled()=true, getMavenInstallationHome()=, getMavenOpts()=, getDefaultGroupId()=com.mycompany, getBaseCommandline()=mvn clean package -DskipMunitTests, isDisplayRuntimeVersionWarning()=true, isExternalInstallation()=false]]
+
+!ENTRY org.mule.tooling.core 4 0 2019-08-06 16:17:39.025
+!MESSAGE There was a problem initializing the MULE_LIB/org.mule.modules/mule-apikit-module/1.1.9 classpath container for projects accountapi
+!STACK 1
+Java Model Exception: Core Exception [code 372] Project 'accountapi' is not open.
+	at org.eclipse.jdt.internal.core.SetContainerOperation.executeOperation(SetContainerOperation.java:130)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:724)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:795)
+	at org.eclipse.jdt.core.JavaCore.setClasspathContainer(JavaCore.java:5730)
+	at org.mule.tooling.core.runtime.JavaCoreClasspathContainerConfigurer.configureContainerInProjects(JavaCoreClasspathContainerConfigurer.java:42)
+	at org.mule.tooling.core.runtime.ExternalContributionClasspathContainerInitializer.setClasspathContainer(ExternalContributionClasspathContainerInitializer.java:111)
+	at org.mule.tooling.core.runtime.ExternalContributionClasspathContainerInitializer.lambda$6(ExternalContributionClasspathContainerInitializer.java:95)
+	at org.mule.tooling.core.module.runner.DefaultCallback.onSuccess(DefaultCallback.java:23)
+	at org.mule.tooling.core.module.runner.DependenciesCallback.onSuccess(DependenciesCallback.java:1)
+	at org.mule.tooling.core.module.runner.StateCheckingRunnerDecorator.lambda$0(StateCheckingRunnerDecorator.java:67)
+	at org.mule.tooling.core.module.runner.DefaultCallback.onSuccess(DefaultCallback.java:23)
+	at org.mule.tooling.core.module.runner.DependenciesCallback.onSuccess(DependenciesCallback.java:1)
+	at org.mule.tooling.core.module.internal.runner.Task.lambda$2(Task.java:138)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.mule.tooling.core.module.internal.runner.Task.done(Task.java:138)
+	at org.mule.tooling.core.module.internal.runner.Task.run(Task.java:75)
+	at org.mule.tooling.core.module.internal.runner.ArtifactResolvingRunner$ArtifactJob.run(ArtifactResolvingRunner.java:212)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Project 'accountapi' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:144)
+	at org.eclipse.core.internal.resources.Resource.checkAccessibleAndLocal(Resource.java:215)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1749)
+	at org.eclipse.core.internal.resources.Project.touch(Project.java:1320)
+	at org.eclipse.jdt.internal.core.SetContainerOperation.executeOperation(SetContainerOperation.java:116)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:724)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:795)
+	at org.eclipse.jdt.core.JavaCore.setClasspathContainer(JavaCore.java:5730)
+	at org.mule.tooling.core.runtime.JavaCoreClasspathContainerConfigurer.configureContainerInProjects(JavaCoreClasspathContainerConfigurer.java:42)
+	at org.mule.tooling.core.runtime.ExternalContributionClasspathContainerInitializer.setClasspathContainer(ExternalContributionClasspathContainerInitializer.java:111)
+	at org.mule.tooling.core.runtime.ExternalContributionClasspathContainerInitializer.lambda$6(ExternalContributionClasspathContainerInitializer.java:95)
+	at org.mule.tooling.core.module.runner.DefaultCallback.onSuccess(DefaultCallback.java:23)
+	at org.mule.tooling.core.module.runner.DependenciesCallback.onSuccess(DependenciesCallback.java:1)
+	at org.mule.tooling.core.module.runner.StateCheckingRunnerDecorator.lambda$0(StateCheckingRunnerDecorator.java:67)
+	at org.mule.tooling.core.module.runner.DefaultCallback.onSuccess(DefaultCallback.java:23)
+	at org.mule.tooling.core.module.runner.DependenciesCallback.onSuccess(DependenciesCallback.java:1)
+	at org.mule.tooling.core.module.internal.runner.Task.lambda$2(Task.java:138)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.mule.tooling.core.module.internal.runner.Task.done(Task.java:138)
+	at org.mule.tooling.core.module.internal.runner.Task.run(Task.java:75)
+	at org.mule.tooling.core.module.internal.runner.ArtifactResolvingRunner$ArtifactJob.run(ArtifactResolvingRunner.java:212)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2019-08-06 16:17:39.045
+!MESSAGE Project 'accountapi' is not open.
+
+!ENTRY org.mule.tooling.maven 1 0 2019-08-06 16:21:06.594
+!MESSAGE  *** 21066 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.mule.tooling.maven 1 0 2019-08-06 16:44:21.887
+!MESSAGE  *** 36562 EmbeddedMavenRunner [configuration=MavenPreferences [isDontWarnAgainIfNoInstallationFoundChecked()=false, isGlobalMavenSupportEnabled()=true, getMavenInstallationHome()=, getMavenOpts()=, getDefaultGroupId()=com.mycompany, getBaseCommandline()=mvn clean package -DskipMunitTests, isDisplayRuntimeVersionWarning()=true, isExternalInstallation()=false]]

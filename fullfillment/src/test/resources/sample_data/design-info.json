@@ -1,0 +1,9 @@
+{
+  "sampleData": {
+    "69836e59-ceb2-4ab3-ade5-c48ba78b0c34": {
+      "vars-originalReq": "sample_data/unknown.json",
+      "vars-fraudRS": "sample_data/unknown.dwl",
+      "vars-paymentRS": "sample_data/unknown_1.dwl"
+    }
+  }
+}
