@@ -46,7 +46,7 @@
 	</binding>
 	<service name="UpdateReservationService">
 		<port binding="tns:UpdateReservationSoapBinding" name="UpdateReservationPortType">
-			<soap:address location="https://webservices.sabre.com"/>
+			<soap:address location="http://localhost:8088/mockUpdateReservationSoapBinding"/>
 		</port>
 	</service>
 </definitions>

@@ -282,25 +282,25 @@
   </binding>
   <service name="MiscellaneousService">
     <port name="GetMiscFeesPortType" binding="misc:GetMiscFeesSoapBinding">
-      <soap:address location="https://webservices.sabre.com"/>
+      <soap:address location="http://localhost:8088/mockCollectMiscFeeSoapBinding"/>
     </port>
     <port name="GetMiscOverridePortType" binding="misc:GetMiscOverrideSoapBinding">
-      <soap:address location="https://webservices.sabre.com"/>
+      <soap:address location="http://localhost:8088/mockCollectMiscFeeSoapBinding"/>
     </port>
     <port name="CalculateTotalCostPortType" binding="misc:CalculateTotalCostSoapBinding">
-      <soap:address location="https://webservices.sabre.com"/>
+      <soap:address location="http://localhost:8088/mockCollectMiscFeeSoapBinding"/>
     </port>
     <port name="CollectMiscFeePortType" binding="misc:CollectMiscFeeSoapBinding">
-      <soap:address location="https://webservices.sabre.com"/>
+      <soap:address location="http://localhost:8088/mockCollectMiscFeeSoapBinding"/>
     </port>
     <port name="WaiveMiscFeePortType" binding="misc:WaiveMiscFeeSoapBinding">
-      <soap:address location="https://webservices.sabre.com"/>
+      <soap:address location="http://localhost:8088/mockCollectMiscFeeSoapBinding"/>
     </port>
     <port name="CalculateExchangeCostPortType" binding="misc:CalculateExchangeCostSoapBinding">
-      <soap:address location="https://webservices.sabre.com"/>
+      <soap:address location="http://localhost:8088/mockCollectMiscFeeSoapBinding"/>
     </port>
     <port name="ExchangeDocumentForEMDPortType" binding="misc:ExchangeDocumentForEMDSoapBinding">
-      <soap:address location="https://webservices.sabre.com"/>
+      <soap:address location="http://localhost:8088/mockCollectMiscFeeSoapBinding"/>
     </port>
   </service>
 </definitions>

@@ -4,6 +4,9 @@
       "vars-originalReq": "sample_data/unknown.json",
       "vars-fraudRS": "sample_data/unknown.dwl",
       "vars-paymentRS": "sample_data/unknown_1.dwl"
+    },
+    "63c78a95-ad53-401f-bf12-abc67db11d95": {
+      "vars-updateRS": "sample_data/unknown_2.dwl"
     }
   }
 }

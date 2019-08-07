@@ -41,7 +41,7 @@
 </binding>
 <service name="FraudCheckServiceService">
 <port name="FraudCheckServicePortType" binding="tns:FraudCheckServiceSoapBinding">
-<soap:address location="https://webservices.sabre.com"/>
+<soap:address location="http://localhost:8088/mockFraudCheckServiceSoapBinding"/>
 </port>
 </service>
 </definitions>

@@ -41,7 +41,7 @@
 	</binding>
 	<service name="PaymentServiceService">
 		<port name="PaymentServicePortType" binding="tns:PaymentServiceSoapBinding">
-			<soap:address location="https://webservices.sabre.com"/>
+			<soap:address location="http://localhost:8088/mockPaymentServiceSoapBinding"/>
 		</port>
 	</service>
 </definitions>

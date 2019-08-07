@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://webservices.sabre.com/pnrbuilder/v1_18" elementFormDefault="qualified" attributeFormDefault="unqualified">
-  <include schemaLocation="UpdateReservationSTLRQ_v1.18.0.xsd" />
-  <include schemaLocation="UpdateReservationSTLRS_v1.18.0.xsd" />
-</schema>

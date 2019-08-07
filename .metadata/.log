@@ -6598,3 +6598,365 @@ Caused by: org.eclipse.core.internal.resources.ResourceException: Project 'accou
 
 !ENTRY org.mule.tooling.maven 1 0 2019-08-06 16:44:21.887
 !MESSAGE  *** 36562 EmbeddedMavenRunner [configuration=MavenPreferences [isDontWarnAgainIfNoInstallationFoundChecked()=false, isGlobalMavenSupportEnabled()=true, getMavenInstallationHome()=, getMavenOpts()=, getDefaultGroupId()=com.mycompany, getBaseCommandline()=mvn clean package -DskipMunitTests, isDisplayRuntimeVersionWarning()=true, isExternalInstallation()=false]]
+
+!ENTRY org.mule.tooling.ui.contribution.munit 1 1 2019-08-06 16:57:40.633
+!MESSAGE Deleting MUnit temporary folder in C:\Users\Training\AppData\Local\Temp\munit-temp-dir
+
+!ENTRY org.mule.tooling.analytics 1 0 2019-08-06 16:57:41.308
+!MESSAGE Analytics shutdown successfully
+!SESSION 2019-08-07 09:54:40.760 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_191
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 09:55:12.771
+!MESSAGE Using extension model cache located at: D:\MuleSoft\.mule\plugins-tmp\repository
+
+!ENTRY org.mule.tooling.ui.contribution.munit 1 1 2019-08-07 09:57:53.393
+!MESSAGE Creating MUnit temporary folder in C:\Users\Training\AppData\Local\Temp\munit-temp-dir
+
+!ENTRY org.mule.tooling.analytics 1 0 2019-08-07 09:58:15.778
+!MESSAGE Analytics starts successfully
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 09:58:16.101
+!MESSAGE Reusing tooling instance
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 09:58:16.143
+!MESSAGE Tooling path: C:\Users\Training\Desktop\AnypointStudio\configuration\org.eclipse.osgi\425\data\.runtimes\tooling-ekwdtik5
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 09:58:16.269
+!MESSAGE Tooling version: 4.2.0
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 09:58:16.295
+!MESSAGE Starting tooling instance
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 09:58:16.337
+!MESSAGE Tooling startup timeout: 90s
+
+!ENTRY org.mule.tooling.core 4 0 2019-08-07 09:59:21.537
+!MESSAGE There was a problem initializing the MULE_LIB/org.mule.connectors/mule-sockets-connector/1.1.5 classpath container for projects apdev-example
+!STACK 1
+Java Model Exception: Core Exception [code 372] Project 'apdev-example' is not open.
+	at org.eclipse.jdt.internal.core.SetContainerOperation.executeOperation(SetContainerOperation.java:130)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:724)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:795)
+	at org.eclipse.jdt.core.JavaCore.setClasspathContainer(JavaCore.java:5730)
+	at org.mule.tooling.core.runtime.JavaCoreClasspathContainerConfigurer.configureContainerInProjects(JavaCoreClasspathContainerConfigurer.java:42)
+	at org.mule.tooling.core.runtime.ExternalContributionClasspathContainerInitializer.setClasspathContainer(ExternalContributionClasspathContainerInitializer.java:111)
+	at org.mule.tooling.core.runtime.ExternalContributionClasspathContainerInitializer.lambda$6(ExternalContributionClasspathContainerInitializer.java:95)
+	at org.mule.tooling.core.module.runner.DefaultCallback.onSuccess(DefaultCallback.java:23)
+	at org.mule.tooling.core.module.runner.DependenciesCallback.onSuccess(DependenciesCallback.java:1)
+	at org.mule.tooling.core.module.runner.StateCheckingRunnerDecorator.lambda$0(StateCheckingRunnerDecorator.java:67)
+	at org.mule.tooling.core.module.runner.DefaultCallback.onSuccess(DefaultCallback.java:23)
+	at org.mule.tooling.core.module.runner.DependenciesCallback.onSuccess(DependenciesCallback.java:1)
+	at org.mule.tooling.core.module.internal.runner.Task.lambda$2(Task.java:138)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.mule.tooling.core.module.internal.runner.Task.done(Task.java:138)
+	at org.mule.tooling.core.module.internal.runner.Task.run(Task.java:75)
+	at org.mule.tooling.core.module.internal.runner.ArtifactResolvingRunner$ArtifactJob.run(ArtifactResolvingRunner.java:212)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Project 'apdev-example' is not open.
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:144)
+	at org.eclipse.core.internal.resources.Resource.checkAccessibleAndLocal(Resource.java:215)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1749)
+	at org.eclipse.core.internal.resources.Project.touch(Project.java:1320)
+	at org.eclipse.jdt.internal.core.SetContainerOperation.executeOperation(SetContainerOperation.java:116)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:724)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:795)
+	at org.eclipse.jdt.core.JavaCore.setClasspathContainer(JavaCore.java:5730)
+	at org.mule.tooling.core.runtime.JavaCoreClasspathContainerConfigurer.configureContainerInProjects(JavaCoreClasspathContainerConfigurer.java:42)
+	at org.mule.tooling.core.runtime.ExternalContributionClasspathContainerInitializer.setClasspathContainer(ExternalContributionClasspathContainerInitializer.java:111)
+	at org.mule.tooling.core.runtime.ExternalContributionClasspathContainerInitializer.lambda$6(ExternalContributionClasspathContainerInitializer.java:95)
+	at org.mule.tooling.core.module.runner.DefaultCallback.onSuccess(DefaultCallback.java:23)
+	at org.mule.tooling.core.module.runner.DependenciesCallback.onSuccess(DependenciesCallback.java:1)
+	at org.mule.tooling.core.module.runner.StateCheckingRunnerDecorator.lambda$0(StateCheckingRunnerDecorator.java:67)
+	at org.mule.tooling.core.module.runner.DefaultCallback.onSuccess(DefaultCallback.java:23)
+	at org.mule.tooling.core.module.runner.DependenciesCallback.onSuccess(DependenciesCallback.java:1)
+	at org.mule.tooling.core.module.internal.runner.Task.lambda$2(Task.java:138)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.mule.tooling.core.module.internal.runner.Task.done(Task.java:138)
+	at org.mule.tooling.core.module.internal.runner.Task.run(Task.java:75)
+	at org.mule.tooling.core.module.internal.runner.ArtifactResolvingRunner$ArtifactJob.run(ArtifactResolvingRunner.java:212)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2019-08-07 09:59:21.537
+!MESSAGE Project 'apdev-example' is not open.
+
+!ENTRY org.mule.tooling.core 4 0 2019-08-07 09:59:27.472
+!MESSAGE There was a problem initializing the MULE_LIB/org.mule.connectors/mule-wsc-connector/1.1.0 classpath container for projects accounts-mod08-joining-data-solution
+!STACK 1
+Java Model Exception: Java Model Status [accounts-mod08-joining-data-solution does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:560)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2469)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2202)
+	at org.eclipse.jdt.internal.core.JavaProject.getResolvedClasspath(JavaProject.java:2252)
+	at org.eclipse.jdt.internal.core.ExternalFolderChange.updateExternalFoldersIfNecessary(ExternalFolderChange.java:39)
+	at org.eclipse.jdt.internal.core.ChangeClasspathOperation.classpathChanged(ChangeClasspathOperation.java:59)
+	at org.eclipse.jdt.internal.core.SetContainerOperation.executeOperation(SetContainerOperation.java:111)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:724)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2267)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:795)
+	at org.eclipse.jdt.core.JavaCore.setClasspathContainer(JavaCore.java:5730)
+	at org.mule.tooling.core.runtime.JavaCoreClasspathContainerConfigurer.configureContainerInProjects(JavaCoreClasspathContainerConfigurer.java:42)
+	at org.mule.tooling.core.runtime.ExternalContributionClasspathContainerInitializer.setClasspathContainer(ExternalContributionClasspathContainerInitializer.java:111)
+	at org.mule.tooling.core.runtime.ExternalContributionClasspathContainerInitializer.lambda$6(ExternalContributionClasspathContainerInitializer.java:95)
+	at org.mule.tooling.core.module.runner.DefaultCallback.onSuccess(DefaultCallback.java:23)
+	at org.mule.tooling.core.module.runner.DependenciesCallback.onSuccess(DependenciesCallback.java:1)
+	at org.mule.tooling.core.module.runner.StateCheckingRunnerDecorator.lambda$0(StateCheckingRunnerDecorator.java:67)
+	at org.mule.tooling.core.module.runner.DefaultCallback.onSuccess(DefaultCallback.java:23)
+	at org.mule.tooling.core.module.runner.DependenciesCallback.onSuccess(DependenciesCallback.java:1)
+	at org.mule.tooling.core.module.internal.runner.Task.lambda$2(Task.java:138)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.mule.tooling.core.module.internal.runner.Task.done(Task.java:138)
+	at org.mule.tooling.core.module.internal.runner.Task.run(Task.java:75)
+	at org.mule.tooling.core.module.internal.runner.ArtifactResolvingRunner$ArtifactJob.run(ArtifactResolvingRunner.java:212)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2019-08-07 09:59:27.472
+!MESSAGE accounts-mod08-joining-data-solution does not exist
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 09:59:56.242
+!MESSAGE Tooling workspace is D:\MuleSoft\.tooling-apps-cache
+
+!ENTRY org.eclipse.jface 2 0 2019-08-07 09:59:58.408
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-08-07 09:59:58.408
+!MESSAGE A conflict occurred for CTRL+SHIFT+X:
+Binding(CTRL+SHIFT+X,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.upperCase,To Upper Case,
+		Changes the selection to upper case,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@545cfddb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+Binding(CTRL+SHIFT+X,
+	ParameterizedCommand(Command(org.mule.tooling.runtime.muleLaunchShortcut.run,Run Mule Application,
+		Run Mule Application,
+		Category(org.mule.tooling.runtime.ui.category,Runtime Category,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7cb95c36,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-08-07 09:59:58.408
+!MESSAGE A conflict occurred for CTRL+SHIFT+F:
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.format,Format,
+		Format the selected text,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7df7cc64,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(org.mule.tooling.ui.openFlow,Open Flow,
+		Search For Flows in the current workspace,
+		Category(org.eclipse.core.commands.categories.autogenerated,Uncategorized,Commands that were either auto-generated or have no category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@431c2020,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.mule.tooling.runtime 1 0 2019-08-07 10:00:00.101
+!MESSAGE Starting shell termination command "[taskkill, /F, /PID, 9036]"
+
+!ENTRY org.mule.tooling.runtime 1 0 2019-08-07 10:00:00.214
+!MESSAGE Finished shell termination command "[taskkill, /F, /PID, 9036]"
+
+!ENTRY org.mule.tooling.runtime 1 0 2019-08-07 10:00:00.934
+!MESSAGE Starting shell termination command "[taskkill, /F, /PID, 6980]"
+
+!ENTRY org.mule.tooling.runtime 1 0 2019-08-07 10:00:01.012
+!MESSAGE Finished shell termination command "[taskkill, /F, /PID, 6980]"
+
+!ENTRY org.mule.tooling.core 4 0 2019-08-07 10:00:01.338
+!MESSAGE Error preparing tooling instance
+!STACK 0
+org.mule.tooling.runtime.controller.MuleControllerException: Timeout while starting mule instance
+	at org.mule.tooling.runtime.controller.MuleController.start(MuleController.java:146)
+	at org.mule.tooling.client.startup.ToolingManager.setup(ToolingManager.java:296)
+	at org.mule.tooling.client.startup.ToolingManager.getToolingInstance(ToolingManager.java:136)
+	at org.mule.tooling.client.startup.ToolingClientStartup$1.run(ToolingClientStartup.java:19)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.awaitility.core.ConditionTimeoutException: Condition with lambda expression in org.mule.tooling.runtime.controller.MuleController was not fulfilled within 90 seconds.
+	at org.awaitility.core.ConditionAwaiter.await(ConditionAwaiter.java:104)
+	at org.awaitility.core.CallableCondition.await(CallableCondition.java:79)
+	at org.awaitility.core.CallableCondition.await(CallableCondition.java:27)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:809)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:785)
+	at org.mule.tooling.runtime.controller.MuleController.start(MuleController.java:130)
+	... 4 more
+
+!ENTRY org.mule.tooling.core 4 0 2019-08-07 10:00:01.376
+!MESSAGE Tooling instance could not be started, another attempt will be made
+!STACK 0
+org.mule.tooling.client.startup.ToolingNotAvailableException: Tooling instance could not be started, another attempt will be made
+	at org.mule.tooling.client.startup.ToolingManager.setup(ToolingManager.java:304)
+	at org.mule.tooling.client.startup.ToolingManager.getToolingInstance(ToolingManager.java:136)
+	at org.mule.tooling.client.startup.ToolingClientStartup$1.run(ToolingClientStartup.java:19)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.mule.tooling.runtime.controller.MuleControllerException: Timeout while starting mule instance
+	at org.mule.tooling.runtime.controller.MuleController.start(MuleController.java:146)
+	at org.mule.tooling.client.startup.ToolingManager.setup(ToolingManager.java:296)
+	... 3 more
+Caused by: org.awaitility.core.ConditionTimeoutException: Condition with lambda expression in org.mule.tooling.runtime.controller.MuleController was not fulfilled within 90 seconds.
+	at org.awaitility.core.ConditionAwaiter.await(ConditionAwaiter.java:104)
+	at org.awaitility.core.CallableCondition.await(CallableCondition.java:79)
+	at org.awaitility.core.CallableCondition.await(CallableCondition.java:27)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:809)
+	at org.awaitility.core.ConditionFactory.until(ConditionFactory.java:785)
+	at org.mule.tooling.runtime.controller.MuleController.start(MuleController.java:130)
+	... 4 more
+
+!ENTRY org.eclipse.jface 2 0 2019-08-07 10:00:04.245
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-08-07 10:00:04.245
+!MESSAGE A conflict occurred for F2:
+Binding(F2,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.rename,Rename,
+		Rename the selected item,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@70f4dd28,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F2,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.showInformation,Show Tooltip Description,
+		Displays information for the current caret location in a focused hover,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f0c27dc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.xtext.ui.embeddedTextEditorScope,,,system)
+
+!ENTRY org.mule.tooling.maven 1 0 2019-08-07 10:00:44.824
+!MESSAGE  *** 37306 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=null, mavenOpts=]]
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 10:00:50.100
+!MESSAGE Creating tooling instance
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 10:00:50.116
+!MESSAGE Copying mule instance as tooling instance
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 10:01:32.631
+!MESSAGE Tooling path: C:\Users\Training\Desktop\AnypointStudio\configuration\org.eclipse.osgi\425\data\.runtimes\tooling-dcn9hsaj
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 10:01:32.631
+!MESSAGE Tooling version: 4.2.0
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 10:01:32.651
+!MESSAGE Starting tooling instance
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 10:01:32.657
+!MESSAGE Tooling startup timeout: 90s
+
+!ENTRY org.mule.tooling.core 1 0 2019-08-07 10:02:42.161
+!MESSAGE Tooling up and running
+
+!ENTRY org.eclipse.jface 2 0 2019-08-07 10:02:46.255
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-08-07 10:02:46.255
+!MESSAGE A conflict occurred for CTRL+F:
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.findReplace,Find and Replace,
+		Find and replace text,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@28627a48,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.mule.tooling.ui.dfl.contribution.commands.searchCommand,Find/Replace,
+		Find/Replace,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@77858c1f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+Binding(CTRL+F,
+	ParameterizedCommand(Command(org.mule.tooling.commands.focusSearchCommand,Focus Search Command,
+		Focus Search in Palette,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2a40d302,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+
+!ENTRY org.mule.tooling.maven 1 0 2019-08-07 10:28:27.548
+!MESSAGE  *** 34050 EmbeddedMavenRunner [configuration=MavenPreferences [isDontWarnAgainIfNoInstallationFoundChecked()=false, isGlobalMavenSupportEnabled()=true, getMavenInstallationHome()=, getMavenOpts()=, getDefaultGroupId()=com.mycompany, getBaseCommandline()=mvn clean package -DskipMunitTests, isDisplayRuntimeVersionWarning()=true, isExternalInstallation()=false]]
+
+!ENTRY org.mule.tooling.maven 1 0 2019-08-07 10:54:14.038
+!MESSAGE  *** 40089 EmbeddedMavenRunner [configuration=MavenPreferences [isDontWarnAgainIfNoInstallationFoundChecked()=false, isGlobalMavenSupportEnabled()=true, getMavenInstallationHome()=, getMavenOpts()=, getDefaultGroupId()=com.mycompany, getBaseCommandline()=mvn clean package -DskipMunitTests, isDisplayRuntimeVersionWarning()=true, isExternalInstallation()=false]]
+
+!ENTRY org.eclipse.jface 2 0 2019-08-07 11:00:13.227
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-08-07 11:00:13.227
+!MESSAGE A conflict occurred for CTRL+SHIFT+I:
+Binding(CTRL+SHIFT+I,
+	ParameterizedCommand(Command(org.eclipse.jdt.debug.ui.commands.Inspect,Inspect,
+		Inspect result of evaluating selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3acc9b36,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+Binding(CTRL+SHIFT+I,
+	ParameterizedCommand(Command(org.mule.tooling.debugger.commands.openevaluatepopup,(Mule) Open Evaluate Popup,
+		,
+		Category(org.mule.tooling.debugger.commands.category,org.mule.tooling.debugger.commands.category,Category for debugger commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4514546d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.openEvaluatePopup,,,system)
+Binding(CTRL+SHIFT+I,
+	ParameterizedCommand(Command(org.mule.tooling.ui.dfl.contribution.commands.inputSearchCommand,Input Search,
+		Input Search,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3a0a2038,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2019-08-07 11:03:04.591
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-08-07 11:03:04.591
+!MESSAGE A conflict occurred for CTRL+SHIFT+P:
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.mule.tooling.ui.exportImageCommand,Export image,
+		Export image,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7e8a8432,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.keybindings.contexts.muleStudio,,,system)
+Binding(CTRL+SHIFT+P,
+	ParameterizedCommand(Command(org.mule.tooling.ui.dfl.contribution.commands.turnOnOffPreviewCommand,Turn on/off preview,
+		Turn on/off preview,
+		Category(org.mule.tooling.ui.commandcategory,org.mule.tooling.ui.commandcategory,Category for menu commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@77a421cc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.mule.tooling.contexts.mulePropertiesEditor,,,system)
+
+!ENTRY org.mule.tooling.runtime 1 0 2019-08-07 11:13:12.230
+!MESSAGE Starting shell termination command "[taskkill, /F, /PID, 1092]"
+
+!ENTRY org.mule.tooling.runtime 1 0 2019-08-07 11:13:12.285
+!MESSAGE Finished shell termination command "[taskkill, /F, /PID, 1092]"
+
+!ENTRY org.mule.tooling.runtime 2 0 2019-08-07 11:13:12.856
+!MESSAGE Termination command ShellTerminationCommand [getTerminationCommand()=[]] indicate retry action is necessary, moving on to next one
+
+!ENTRY org.mule.tooling.runtime 1 0 2019-08-07 11:13:12.867
+!MESSAGE Starting shell termination command "[taskkill, /F, /PID, 2844]"
+
+!ENTRY org.mule.tooling.runtime 1 0 2019-08-07 11:13:12.956
+!MESSAGE Finished shell termination command "[taskkill, /F, /PID, 2844]"
+
+!ENTRY org.mule.tooling.maven 1 0 2019-08-07 11:15:34.426
+!MESSAGE  *** 139 EmbeddedMavenRunner [configuration=DefaultMavenRunnerConfiguration [externalInstallation=false, mavenInstallationHome=, mavenOpts=]]
