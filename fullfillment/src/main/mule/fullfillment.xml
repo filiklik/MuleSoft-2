@@ -41,9 +41,9 @@ ns ns01 http://webservices.sabre.com/pnrbuilder/v1_18
 		<flow-ref doc:name="payment" doc:id="474fc5c2-d298-4e0a-bfd2-218262cc55ab" name="flow_payment"/>
 		<flow-ref doc:name="miscfee" doc:id="0ec65ae5-e367-402e-b77e-8372ef42a17d" name="flow_miscfee"/>
 		<flow-ref doc:name="fraud" doc:id="93feb938-3a39-4da7-a4d3-3d2b5e15082c" name="flow_fraud"/>
-		<ee:transform doc:name="Transform Message" doc:id="69836e59-ceb2-4ab3-ade5-c48ba78b0c34" >
-			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
+		<ee:transform doc:name="Transform Message" doc:id="69836e59-ceb2-4ab3-ade5-c48ba78b0c34">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
 output application/json
 ns ns0 http://www.opentravel.org/OTA/2003/05/beta
 ns ns01 http://schemas.xmlsoap.org/soap/envelope/
@@ -99,6 +99,7 @@ ns ns04 http://services.sabre.com/STL/v01
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
+		<flow-ref doc:name="finally" doc:id="43d92502-9b6e-4617-8b2e-7dc1867a4050" name="flow_update" />
 	</flow>
 	<flow name="flow_getReservation" doc:id="f56f9c32-7067-4be4-8f4e-4797b779c3a0" >
 		<flow-ref doc:name="getreservation_flow" doc:id="c363cd5f-c5a1-4003-9a55-35e68e43dd3d" name="getreservation_flow"/>
@@ -400,7 +401,7 @@ payload]]></ee:set-variable>
 	</flow>
 	<flow name="flow_update" doc:id="a176a948-0236-4827-9795-f6da665b4bcb" >
 		<flow-ref doc:name="update_flow" doc:id="b6641696-ac80-4a89-866a-fc3883b0431c" name="update_flow"/>
-		<set-variable value="#[payload.Envelope.Body]" doc:name="Set Variable" doc:id="3d86a5df-6a3a-489b-9b2b-e76b3e176a36" variableName="updateRS"/>
+		<set-variable value="#[payload]" doc:name="Set Variable" doc:id="3d86a5df-6a3a-489b-9b2b-e76b3e176a36" variableName="updateRS"/>
 		<ee:transform doc:name="Transform Message" doc:id="63c78a95-ad53-401f-bf12-abc67db11d95" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
@@ -409,8 +410,12 @@ ns ns0 http://webservices.sabre.com/pnrbuilder/v1_18
 ns ns01 http://schemas.xmlsoap.org/soap/envelope/
 ---
 {
-	ns0#UpdateReservationRS: {
-		ns0#Success: vars.updateRS.ns01#Envelope.ns01#Body.ns0#UpdateReservationRS.ns0#Success
+	ns01#Envelope: {
+		ns01#Body: {
+			ns0#UpdateReservationRS: {
+				ns0#Success: vars.updateRS.ns0#UpdateReservationRS.ns0#Success
+			}
+		}
 	}
 }]]></ee:set-payload>
 			</ee:message>

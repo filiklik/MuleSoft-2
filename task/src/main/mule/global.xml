@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd">
+	<http:listener-config name="HTTP_Listener_config1" doc:name="HTTP Listener config" doc:id="f7bf1a2c-b218-4157-a424-1d2195bc9aa9" >
+		<http:listener-connection host="0.0.0.0" port="8083" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="69097228-86af-4b2e-8ca0-46c4fb843585" >
+		<http:request-connection host="localhost" port="8088" />
+	</http:request-config>
+	<configuration doc:name="Configuration" doc:id="199899df-14ad-44e8-9bf0-3679663e532e" defaultErrorHandler-ref="globalError_Handler" />
+	<wsc:config name="Web_Service_Consumer_Config_GetReservations" doc:name="Web Service Consumer Config" doc:id="82167881-c698-4516-a9ab-6d021cfe8397" >
+		<wsc:connection wsdlLocation="GetReservation_1.18.0.wsdl" service="GetReservationService" port="GetReservationPortType" address="http://localhost:8088/mockGetReservationSoapBinding" />
+	</wsc:config>
+	<wsc:config name="Web_Service_Consumer_Config_GetPayments" doc:name="Web Service Consumer Config" doc:id="a864da15-bca2-4c8a-8085-fbea87d301e6" >
+		<wsc:connection wsdlLocation="PaymentRQ_v4.13.0.wsdl" service="PaymentServiceService" port="PaymentServicePortType" address="http://localhost:8088/mockPaymentServiceSoapBinding" />
+	</wsc:config>
+	<wsc:config name="Web_Service_Consumer_Config_Miscellaneous" doc:name="Web Service Consumer Config" doc:id="e91d0170-f798-4364-867b-77de5e95c170" >
+		<wsc:connection wsdlLocation="Miscellaneous_v.1.4.1.wsdl" service="MiscellaneousService" port="CollectMiscFeePortType" address="http://localhost:8088/mockCollectMiscFeeSoapBinding" />
+	</wsc:config>
+	<wsc:config name="Web_Service_Consumer_Config_Fraud" doc:name="Web Service Consumer Config" doc:id="1774458d-8717-4897-8b0c-05454e2788e8" >
+		<wsc:connection wsdlLocation="FraudCheckRQ_v1.7.0.wsdl" service="FraudCheckServiceService" port="FraudCheckServicePortType" address="http://localhost:8088/mockFraudCheckServiceSoapBinding" />
+	</wsc:config>
+	<flow name="updateFlow" doc:id="1921189a-dce2-4078-9c59-1a15462c9e4b" >
+		<ee:transform doc:name="UpdateReservationReq" doc:id="dfbeccdb-2582-4347-808e-720df001d04b">
+				<ee:message>
+					<ee:set-payload resource="MuleDMLTransformations/updateReservationsRequest.dwl" />
+				</ee:message>
+			</ee:transform>
+		<set-variable value="#[payload]" doc:name="Set Variable-updateReservationRequest" doc:id="541f5600-25fc-46c9-b3a3-676e867d4ba4" variableName="updateReservationRequest"/>
+		<flow-ref doc:name="update-reservationFlow" doc:id="802d58d9-5916-4a3b-9ba4-8700f45d4569" name="update-reservationFlow" />
+		<set-variable value="#[payload]" doc:name="update_wanted" doc:id="a31f62e4-54f6-4144-af89-a485ff5506fd" variableName="update_wanted" />
+		<ee:transform doc:name="Transform Message Response" doc:id="38382dcb-eba9-4ef4-afdf-fe1a93288ee8">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+ns ns0 http://schemas.xmlsoap.org/soap/envelope/
+ns ns01 http://www.opentravel.org/OTA/2003/05/beta
+ns ns02 http://www.sabre.com/ns/Ticketing/misc/1.0
+ns ns03 http://services.sabre.com/STL/v01
+ns ns04 http://webservices.sabre.com/pnrbuilder/v1_18
+---
+{
+	request: vars.originalReq.request,
+	response: {
+		status: {
+			code: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Result.@ResultCode default null,
+			message: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Result.@Description default null
+		},
+		paymentResults: {
+			status: {
+				code: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Result.@ResultCode default null,
+				message: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Result.@Description default null
+			},
+			resultCode: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Result.@ResultCode default null,
+			posAction: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Result.@POSActionCode default null,
+			sabreTransactionId: vars.paymentPayload_wanted.ns01#PaymentRS.@SabreTransactionID as String default null,
+			payments: [{
+				status: {
+					code: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Result.@ResultCode default null
+				},
+				responseCode: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Results.ns01#AuthorizationResult.@ResponseCode default null,
+				fraudCheckResult: vars.fraudCheck.ns01#FraudCheckRS.ns01#FraudScreenResult.@Result default null,
+				details: {
+					paymentId: vars.originalReq.request.paymentData.payment.details.paymentId default 1,
+					amount: {
+						value: vars.originalReq.request.paymentData.payments.details.amount.value default null,
+						currency: vars.originalReq.request.paymentData.payments.details.amount.currency default null
+					}
+				},
+				approvalCode: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Results.ns01#AuthorizationResult.@ApprovalCode default null,
+				remarks: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Results.ns01#AuthorizationResult.ns0#Remarks.ns0#Remark default vars.updateReservationRequest.ns0#Envelope.ns0#Body.ns04#UpdateReservationRQ.ns04#ReservationUpdateList.ns04#ReservationUpdateItem.ns04#RemarkUpdate.ns04#RemarkText,
+				fraudCheckRemarks: vars.fraudCheck.ns01#FraudCheckRS.ns01#FraudRemarks.ns01#Remarks1
+			}],
+			allRemarksAddedToReservation: vars.originalReq.request.ticketingData.ticket default null
+		},
+		ticketingResults: [{
+			ticketingId: vars.originalReq.request.ticketingData.emd.ticketingId default 1,
+			status: {
+				code: vars.paymentPayload_wanted.ns01#PaymentRS.ns01#Result.@ResultCode default null,
+				message: "COMPLETE"
+			},
+			issuedDocumentNumbers: vars.originalReq.request.ticketingData.emd.emdDocuments[0].documentAssociation[0].ticketNumber default null
+		}]
+	}
+}]]></ee:set-payload>
+			</ee:message>
+			<ee:variables >
+			</ee:variables>
+		</ee:transform>
+		<ee:transform doc:name="Transform Message" doc:id="cdc2d47c-b28a-493b-85c5-5240ca748d03">
+				<ee:message>
+					<ee:set-payload><![CDATA[%dw 2.0
+output application/xml
+ns ns0 http://webservices.sabre.com/pnrbuilder/v1_18
+ns ns01 http://schemas.xmlsoap.org/soap/envelope/
+---
+{
+	"output": payload,
+	ns0#UpdateReservationRS: {
+		ns0#Success: vars.update_wanted.ns01#Envelope.ns01#Body.ns0#UpdateReservationRS.ns0#Success
+	}
+}]]></ee:set-payload>
+				</ee:message>
+			</ee:transform>
+	</flow>
+	<error-handler name="globalError_Handler" doc:id="537a92e9-c933-4e6b-9226-2a85051bdaf5" >
+		<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="a5bf37d4-3314-4b18-b94f-5c8ad30c3d2d" type="ANY">
+			<flow-ref doc:name="updateFlow" doc:id="62b15650-f87c-4fff-9e9b-76696f25a6e8" name="updateFlow"/>
+		</on-error-continue>
+	</error-handler>
+
+</mule>

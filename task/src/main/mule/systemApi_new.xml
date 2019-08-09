@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:jms="http://www.mulesoft.org/schema/mule/jms" xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd
+http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/current/mule-jms.xsd">
+	<flow name="getReservation_WSDL" doc:id="7c552a57-ef00-4645-9c7e-35830e81aeda" >
+		<wsc:consume doc:name="Consume-GetReservation" doc:id="0d6dc8e2-dac7-478a-92d1-6af6bfda8dee" config-ref="Web_Service_Consumer_Config_GetReservations" operation="GetReservationOperation"/>
+	</flow>
+	<flow name="getPayments_WSDL" doc:id="0fa220e0-c6dd-4afa-b4e8-ac55d6dd4be6" >
+		<wsc:consume doc:name="Consume-GetPayments" doc:id="23c70acf-1077-4117-9f6e-c6910e3baafe" config-ref="Web_Service_Consumer_Config_GetPayments" operation="PaymentServiceRQ"/>
+	</flow>
+	<flow name="getMiscellaneous_WSDL" doc:id="8683befd-2385-4925-9589-a62adacbc82d" >
+		<wsc:consume doc:name="Consume-Miscellaneous" doc:id="1b43832c-1e31-4f9c-9ce4-f55bcca99955" config-ref="Web_Service_Consumer_Config_Miscellaneous" operation="CollectMiscFeeRQ"/>
+	</flow>
+	<flow name="getFraud_WSDL" doc:id="f99cb1c7-5204-4355-a760-d347318cb090" >
+		<wsc:consume doc:name="Consume-Fraud" doc:id="dce43057-83bb-4159-a6b5-f6ac10a1c435" config-ref="Web_Service_Consumer_Config_Fraud" operation="FraudCheckServiceRQ"/>
+	</flow>
+</mule>

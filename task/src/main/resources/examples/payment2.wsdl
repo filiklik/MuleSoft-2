@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:Envelope xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/">
+  <ns0:Body>
+    <ns2:CollectMiscFeeRQ xmlns:ns2="http://www.sabre.com/ns/Ticketing/misc/1.0" version="1.4.1">
+      <ns1:AgentPOS xmlns:ns1="http://services.sabre.com/STL/v01" company="VA" lniata="BEC33E" sine="S19">
+        <ns1:AAA>ERF</ns1:AAA>
+      </ns1:AgentPOS>
+      <ns1:Transaction xmlns:ns1="http://services.sabre.com/STL/v01" code="EMD"/>
+      <ns1:Parameters xmlns:ns1="http://services.sabre.com/STL/v01">
+        <ns1:PrinterLniata>*ETKT*</ns1:PrinterLniata>
+      </ns1:Parameters>
+      <ns1:Fees xmlns:ns1="http://services.sabre.com/STL/v01">
+        <ns1:Linked>
+          <ns1:Customer lastName="null" firstName="null">
+            <ns1:CustomerDetails nameRefNumber="01.01" pnrLocator="QTWMUM"/>
+          </ns1:Customer>
+          <ns1:Fee/>
+        </ns1:Linked>
+      </ns1:Fees>
+      <ns1:Fees xmlns:ns1="http://services.sabre.com/STL/v01">
+        <ns1:Linked>
+          <ns1:Customer lastName="null" firstName="null">
+            <ns1:CustomerDetails nameRefNumber="02.01" pnrLocator="QTWMUM"/>
+          </ns1:Customer>
+          <ns1:Fee/>
+        </ns1:Linked>
+      </ns1:Fees>
+      <ns1:TotalCost xmlns:ns1="http://services.sabre.com/STL/v01" currencyCode="AUD" currency="AUD">0.77</ns1:TotalCost>
+      <ns1:Payment xmlns:ns1="http://services.sabre.com/STL/v01">
+        <ns1:Amount currencyCode="AUD" currency="AUD">0.77</ns1:Amount>
+        <ns1:FormOfPayment>
+          <ns1:CreditCard transactionID="null">
+            <ns1:Code>VI,CA,AMEX</ns1:Code>
+            <ns1:Number>4005222222222223</ns1:Number>
+            <ns1:ExpiryDate>0520</ns1:ExpiryDate>
+            <ns1:SecurityCode>123</ns1:SecurityCode>
+            <ns1:ApprovalCode/>
+          </ns1:CreditCard>
+        </ns1:FormOfPayment>
+      </ns1:Payment>
+      <ns1:DetailLevel xmlns:ns1="http://services.sabre.com/STL/v01">Full</ns1:DetailLevel>
+    </ns2:CollectMiscFeeRQ>
+  </ns0:Body>
+</ns0:Envelope>
